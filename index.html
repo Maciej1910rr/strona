@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JPYHBE4E5F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JPYHBE4E5F');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maciej Strony WWW Matrix | Radom | Wejście do systemu</title>
@@ -9,40 +18,40 @@
         * {margin:0;padding:0;box-sizing:border-box}
         body {font-family:'Courier New',monospace;background:#000;color:#0f0;overflow-x:hidden}
         #matrix {position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1}
-       .container {max-width:1100px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+     .container {max-width:1100px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
         nav {padding:20px 0;background:rgba(0,0,0,.9);border-bottom:2px solid #0f0;text-align:center;position:sticky;top:0;z-index:100}
         nav a {color:#0f0;text-decoration:none;margin:0 15px;font-weight:600;text-transform:uppercase;text-shadow:0 0 5px #0f0}
         nav a:hover {color:#fff;text-shadow:0 0 10px #fff}
         header {padding:80px 0;text-align:center;background:rgba(0,0,0,.85);border:2px solid #0f0;margin:20px;border-radius:10px}
         h1 {font-size:3.5rem;margin-bottom:20px;text-transform:uppercase;letter-spacing:8px;text-shadow:0 0 20px #0f0,0 0 40px #0f0;animation:glitch 3s infinite}
-       .sub {font-size:1.3rem;color:#0f0;margin-bottom:30px;text-shadow:0 0 10px #0f0}
-       .terminal {background:rgba(0,20,0,.6);border:1px solid #0f0;padding:20px;margin:30px auto;max-width:700px;text-align:left;font-size:0.95rem;box-shadow:0 0 20px #0f0 inset}
-       .terminal-line {margin:5px 0}
-       .terminal-line::before {content:"> ";color:#0f0}
-       .cta {display:inline-block;background:transparent;color:#0f0;padding:18px 45px;text-decoration:none;font-weight:700;font-size:1.1rem;text-transform:uppercase;letter-spacing:2px;border:2px solid #0f0;transition:.3s;text-shadow:0 0 10px #0f0;box-shadow:0 0 20px #0f0 inset;margin:10px}
-       .cta:hover {background:#0f0;color:#000;box-shadow:0 0 30px #0f0}
-        .cta-outline {background:transparent}
-        .tel {display:block;margin-top:15px;color:#0f0;font-size:1.2rem;text-decoration:none;text-shadow:0 0 10px #0f0}
+     .sub {font-size:1.3rem;color:#0f0;margin-bottom:30px;text-shadow:0 0 10px #0f0}
+     .terminal {background:rgba(0,20,0,.6);border:1px solid #0f0;padding:20px;margin:30px auto;max-width:700px;text-align:left;font-size:0.95rem;box-shadow:0 0 20px #0f0 inset}
+     .terminal-line {margin:5px 0}
+     .terminal-line::before {content:"> ";color:#0f0}
+     .cta {display:inline-block;background:transparent;color:#0f0;padding:18px 45px;text-decoration:none;font-weight:700;font-size:1.1rem;text-transform:uppercase;letter-spacing:2px;border:2px solid #0f0;transition:.3s;text-shadow:0 0 10px #0f0;box-shadow:0 0 20px #0f0 inset;margin:10px}
+     .cta:hover {background:#0f0;color:#000;box-shadow:0 0 30px #0f0}
+      .cta-outline {background:transparent}
+      .tel {display:block;margin-top:15px;color:#0f0;font-size:1.2rem;text-decoration:none;text-shadow:0 0 10px #0f0}
         section {padding:80px 0;background:rgba(0,0,0,.85);margin:20px;border:2px solid #0f0;border-radius:10px}
         h2 {font-size:2.8rem;text-align:center;margin-bottom:50px;color:#0f0;text-transform:uppercase;letter-spacing:4px;text-shadow:0 0 20px #0f0}
-       .grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:40px}
-       .card {background:rgba(0,20,0,.5);border:1px solid #0f0;padding:40px;transition:.3s}
-       .card:hover {background:rgba(0,40,0,.7);box-shadow:0 0 30px #0f0;transform:scale(1.03)}
-       .card h3 {font-size:1.5rem;margin-bottom:15px;color:#0f0;text-shadow:0 0 10px #0f0}
-       .price {font-size:2.5rem;font-weight:700;margin:20px 0;color:#0f0;text-shadow:0 0 20px #0f0}
-       .price span {font-size:1rem;color:#0a0}
+     .grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:40px}
+     .card {background:rgba(0,20,0,.5);border:1px solid #0f0;padding:40px;transition:.3s}
+     .card:hover {background:rgba(0,40,0,.7);box-shadow:0 0 30px #0f0;transform:scale(1.03)}
+     .card h3 {font-size:1.5rem;margin-bottom:15px;color:#0f0;text-shadow:0 0 10px #0f0}
+     .price {font-size:2.5rem;font-weight:700;margin:20px 0;color:#0f0;text-shadow:0 0 20px #0f0}
+     .price span {font-size:1rem;color:#0a0}
         ul {list-style:none;margin:20px 0}
         ul li {padding:10px 0;color:#0a0}
         ul li:before {content:"[✓] ";color:#0f0;font-weight:700;margin-right:8px;text-shadow:0 0 5px #0f0}
-       .demo-badge {background:#0f0;color:#000;padding:5px 12px;font-size:0.8rem;display:inline-block;margin-bottom:15px;font-weight:700}
-       .payment {background:rgba(0,20,0,.6);border:2px solid #0f0;padding:40px;text-align:center;margin-top:40px}
-       .crypto-box {background:rgba(0,0,0,.8);padding:20px;margin:20px 0;border:1px solid #0f0}
-       .crypto-id {font-family:monospace;font-size:0.9rem;color:#0f0;word-break:break-all;margin:10px 0;text-shadow:0 0 5px #0f0}
-       .btn-copy {background:transparent;color:#0f0;border:1px solid #0f0;padding:10px 20px;cursor:pointer;margin-top:10px;text-shadow:0 0 5px #0f0}
-       .btn-copy:hover {background:#0f0;color:#000}
-       .form-section {background:rgba(0,0,0,.85)}
+     .demo-badge {background:#0f0;color:#000;padding:5px 12px;font-size:0.8rem;display:inline-block;margin-bottom:15px;font-weight:700}
+     .payment {background:rgba(0,20,0,.6);border:2px solid #0f0;padding:40px;text-align:center;margin-top:40px}
+     .crypto-box {background:rgba(0,0,0,.8);padding:20px;margin:20px 0;border:1px solid #0f0}
+     .crypto-id {font-family:monospace;font-size:0.9rem;color:#0f0;word-break:break-all;margin:10px 0;text-shadow:0 0 5px #0f0}
+     .btn-copy {background:transparent;color:#0f0;border:1px solid #0f0;padding:10px 20px;cursor:pointer;margin-top:10px;text-shadow:0 0 5px #0f0}
+     .btn-copy:hover {background:#0f0;color:#000}
+     .form-section {background:rgba(0,0,0,.85)}
         form {max-width:600px;margin:0 auto}
-       .form-group {margin-bottom:20px}
+     .form-group {margin-bottom:20px}
         label {display:block;margin-bottom:8px;color:#0f0;text-shadow:0 0 5px #0f0}
         input, textarea, select {width:100%;padding:15px;background:rgba(0,0,0,.8);border:1px solid #0f0;color:#0f0;font-size:1rem;font-family:'Courier New',monospace}
         input:focus, textarea:focus, select:focus {outline:none;box-shadow:0 0 15px #0f0}
@@ -84,6 +93,15 @@
             <p style="margin-top:10px;color:#0a0">> UPTIME: PON-PT 16:00-22:00 | WEEKEND 10:00-20:00</p>
         </div>
     </header>
+
+<!-- MIEJSCE NA REKLAMĘ - 300zł/mc -->
+<section style="background:rgba(255,215,0,.1);border:2px solid #ff0;margin:20px;border-radius:10px;padding:30px;text-align:center;">
+    <h3 style="color:#ff0;text-shadow:0 0 10px #ff0;font-family:'Courier New',monospace;">>> TWOJA REKLAMA TUTAJ <<</h3>
+    <p style="color:#ff0;font-family:'Courier New',monospace;">Docierasz do firm z Radomia szukających strony WWW</p>
+    <p style="color:#ff0;font-family:'Courier New',monospace;margin:10px 0;">JEDNO MIEJSCE | 300 PLN / MIESIĄC</p>
+    <a href="tel:+48576348632" style="color:#000;background:#ff0;padding:15px 30px;text-decoration:none;font-weight:700;display:inline-block;margin-top:15px;font-family:'Courier New',monospace;">ZAREZERWUJ: 576.348.632</a>
+</section>
+
     <section id="cennik">
         <div class="container">
             <h2>>> PAKIETY SYSTEMOWE</h2>
@@ -97,7 +115,7 @@
                         <li>Responsive na mobile</li>
                         <li>Formularz kontaktowy</li>
                         <li>Mapa Google</li>
-                        <li>Domena .PL na rok</li>
+                        <li>Domena.PL na rok</li>
                     </ul>
                     <a href="#kontakt" class="cta">> ZAMÓW</a>
                 </div>
@@ -226,3 +244,33 @@
             <p>TEL: +48.576.348.632 | EMAIL: maciej1910rr@proton.me | RADOM</p>
             <p style="margin-top:20px;color:#0a0">PON-PT 16:00-22:00 | SOB-ND 10:00-20:00 | SMS 24/7</p>
         </div>
+    </footer>
+    <script>
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#0f0';
+            ctx.font = fontSize + 'px monospace';
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
+        setInterval(draw, 35);
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
