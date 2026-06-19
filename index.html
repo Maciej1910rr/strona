@@ -3,186 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strony WWW Radom | Tanie strony internetowe od 999zł</title>
-    <meta name="description" content="Tworzę szybkie strony WWW dla firm z Radomia i okolic. Strona wizytówka od 999zł gotowa w 48h. Zadzwoń: 576 348 632">
+    <title>Maciej Strony WWW Matrix | Radom | Wejście do systemu</title>
+    <meta name="description" content="Tworzę strony WWW w stylu Matrix dla firm z Radomia. Wejdź do systemu. Strona od 999zł. Tel: 576 348 632">
     <style>
         * {margin:0;padding:0;box-sizing:border-box}
-        body {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#fff;background:#0a0a0a}
-        .container {max-width:1100px;margin:0 auto;padding:0 20px}
-        nav {padding:20px 0;border-bottom:1px solid #222;text-align:center}
-        nav a {color:#aaa;text-decoration:none;margin:0 15px;font-weight:500}
-        nav a:hover {color:#667eea}
-        header {padding:60px 0;text-align:center}
-        h1 {font-size:3rem;margin-bottom:20px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-        .sub {font-size:1.3rem;color:#aaa;margin-bottom:30px}
-        .cta {display:inline-block;background:#667eea;color:#fff;padding:18px 40px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.1rem;transition:.3s;border:none;cursor:pointer}
-        .cta:hover {background:#5568d3;transform:translateY(-2px)}
-        .cta-outline {background:transparent;border:2px solid #667eea;color:#667eea}
-        .cta-outline:hover {background:#667eea;color:#fff}
-        .tel {display:block;margin-top:15px;color:#667eea;font-size:1.2rem;text-decoration:none}
-        section {padding:80px 0}
-        h2 {font-size:2.5rem;text-align:center;margin-bottom:50px}
-        .grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:40px}
-        .card {background:#111;border:1px solid #222;padding:40px;border-radius:12px;transition:.3s}
-        .card:hover {border-color:#667eea;transform:translateY(-5px)}
-        .card h3 {font-size:1.5rem;margin-bottom:15px;color:#667eea}
-        .price {font-size:2.5rem;font-weight:700;margin:20px 0;color:#fff}
-        .price span {font-size:1rem;color:#666}
+        body {font-family:'Courier New',monospace;background:#000;color:#0f0;overflow-x:hidden}
+        #matrix {position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1}
+       .container {max-width:1100px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+        nav {padding:20px 0;background:rgba(0,0,0,.9);border-bottom:2px solid #0f0;text-align:center;position:sticky;top:0;z-index:100}
+        nav a {color:#0f0;text-decoration:none;margin:0 15px;font-weight:600;text-transform:uppercase;text-shadow:0 0 5px #0f0}
+        nav a:hover {color:#fff;text-shadow:0 0 10px #fff}
+        header {padding:80px 0;text-align:center;background:rgba(0,0,0,.85);border:2px solid #0f0;margin:20px;border-radius:10px}
+        h1 {font-size:3.5rem;margin-bottom:20px;text-transform:uppercase;letter-spacing:8px;text-shadow:0 0 20px #0f0,0 0 40px #0f0;animation:glitch 3s infinite}
+       .sub {font-size:1.3rem;color:#0f0;margin-bottom:30px;text-shadow:0 0 10px #0f0}
+       .terminal {background:rgba(0,20,0,.6);border:1px solid #0f0;padding:20px;margin:30px auto;max-width:700px;text-align:left;font-size:0.95rem;box-shadow:0 0 20px #0f0 inset}
+       .terminal-line {margin:5px 0}
+       .terminal-line::before {content:"> ";color:#0f0}
+       .cta {display:inline-block;background:transparent;color:#0f0;padding:18px 45px;text-decoration:none;font-weight:700;font-size:1.1rem;text-transform:uppercase;letter-spacing:2px;border:2px solid #0f0;transition:.3s;text-shadow:0 0 10px #0f0;box-shadow:0 0 20px #0f0 inset;margin:10px}
+       .cta:hover {background:#0f0;color:#000;box-shadow:0 0 30px #0f0}
+        .cta-outline {background:transparent}
+        .tel {display:block;margin-top:15px;color:#0f0;font-size:1.2rem;text-decoration:none;text-shadow:0 0 10px #0f0}
+        section {padding:80px 0;background:rgba(0,0,0,.85);margin:20px;border:2px solid #0f0;border-radius:10px}
+        h2 {font-size:2.8rem;text-align:center;margin-bottom:50px;color:#0f0;text-transform:uppercase;letter-spacing:4px;text-shadow:0 0 20px #0f0}
+       .grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:40px}
+       .card {background:rgba(0,20,0,.5);border:1px solid #0f0;padding:40px;transition:.3s}
+       .card:hover {background:rgba(0,40,0,.7);box-shadow:0 0 30px #0f0;transform:scale(1.03)}
+       .card h3 {font-size:1.5rem;margin-bottom:15px;color:#0f0;text-shadow:0 0 10px #0f0}
+       .price {font-size:2.5rem;font-weight:700;margin:20px 0;color:#0f0;text-shadow:0 0 20px #0f0}
+       .price span {font-size:1rem;color:#0a0}
         ul {list-style:none;margin:20px 0}
-        ul li {padding:10px 0;color:#ccc}
-        ul li:before {content:"✓ ";color:#667eea;font-weight:700;margin-right:8px}
-        .demo-badge {background:#667eea;color:#fff;padding:5px 12px;border-radius:20px;font-size:0.8rem;display:inline-block;margin-bottom:15px}
-        .payment {background:#111;border:2px solid #667eea;padding:40px;border-radius:12px;text-align:center;margin-top:40px}
-        .crypto-box {background:#0a0a0a;padding:20px;border-radius:8px;margin:20px 0;border:1px solid #222}
-        .crypto-id {font-family:monospace;font-size:1rem;color:#667eea;word-break:break-all;margin:10px 0}
-        .btn-copy {background:#222;color:#667eea;border:1px solid #667eea;padding:10px 20px;border-radius:6px;cursor:pointer;margin-top:10px}
-        .btn-copy:hover {background:#667eea;color:#fff}
-        .form-section {background:#111;padding:60px 0}
+        ul li {padding:10px 0;color:#0a0}
+        ul li:before {content:"[✓] ";color:#0f0;font-weight:700;margin-right:8px;text-shadow:0 0 5px #0f0}
+       .demo-badge {background:#0f0;color:#000;padding:5px 12px;font-size:0.8rem;display:inline-block;margin-bottom:15px;font-weight:700}
+       .payment {background:rgba(0,20,0,.6);border:2px solid #0f0;padding:40px;text-align:center;margin-top:40px}
+       .crypto-box {background:rgba(0,0,0,.8);padding:20px;margin:20px 0;border:1px solid #0f0}
+       .crypto-id {font-family:monospace;font-size:0.9rem;color:#0f0;word-break:break-all;margin:10px 0;text-shadow:0 0 5px #0f0}
+       .btn-copy {background:transparent;color:#0f0;border:1px solid #0f0;padding:10px 20px;cursor:pointer;margin-top:10px;text-shadow:0 0 5px #0f0}
+       .btn-copy:hover {background:#0f0;color:#000}
+       .form-section {background:rgba(0,0,0,.85)}
         form {max-width:600px;margin:0 auto}
-        .form-group {margin-bottom:20px}
-        label {display:block;margin-bottom:8px;color:#aaa}
-        input, textarea, select {width:100%;padding:15px;background:#0a0a0a;border:1px solid #222;border-radius:8px;color:#fff;font-size:1rem;font-family:inherit}
-        input:focus, textarea:focus, select:focus {outline:none;border-color:#667eea}
+       .form-group {margin-bottom:20px}
+        label {display:block;margin-bottom:8px;color:#0f0;text-shadow:0 0 5px #0f0}
+        input, textarea, select {width:100%;padding:15px;background:rgba(0,0,0,.8);border:1px solid #0f0;color:#0f0;font-size:1rem;font-family:'Courier New',monospace}
+        input:focus, textarea:focus, select:focus {outline:none;box-shadow:0 0 15px #0f0}
         textarea {resize:vertical;min-height:120px}
-        footer {padding:40px 0;text-align:center;border-top:1px solid #222;color:#666}
-        @media(max-width:768px){h1{font-size:2rem}h2{font-size:1.8rem}nav a{display:block;margin:10px 0}}
+        footer {padding:40px 0;text-align:center;background:rgba(0,0,0,.9);border-top:2px solid #0f0;color:#0a0}
+        @keyframes glitch{0%,100%{text-shadow:0 0 20px #0f0}50%{text-shadow:0 0 20px #0f0,2px 2px 0 #f00,-2px -2px 0 #00f}}
+        @media(max-width:768px){h1{font-size:2rem;letter-spacing:4px}h2{font-size:1.8rem}nav a{display:block;margin:10px 0}}
     </style>
 </head>
 <body>
+    <canvas id="matrix"></canvas>
     <nav>
         <div class="container">
-            <a href="#start">Start</a>
-            <a href="#cennik">Cennik</a>
-            <a href="#demo">Demo</a>
-            <a href="#kontakt">Kontakt</a>
-            <a href="tel:+48576348632">📞 576 348 632</a>
+            <a href="#start">[START]</a>
+            <a href="#cennik">[CENNIK]</a>
+            <a href="#demo">[DEMO]</a>
+            <a href="#kontakt">[KONTAKT]</a>
+            <a href="tel:+48576348632">📞 576.348.632</a>
         </div>
     </nav>
     <header id="start">
         <div class="container">
-            <h1>Strony WWW Radom</h1>
-            <p class="sub">Tanie, szybkie strony internetowe dla firm z Radomia od 999zł</p>
-            <a href="tel:+48576348632" class="cta">Zadzwoń teraz</a>
-            <a href="#demo" class="cta cta-outline" style="margin-left:10px">Zobacz Demo</a>
-            <a href="tel:+48576348632" class="tel">📞 576 348 632</a>
-            <p style="margin-top:10px;color:#666">Odbieram pon-pt 16:00-22:00, weekendy 10:00-20:00</p>
+            <h1>MACIEJ_STRONY_WWW</h1>
+            <p class="sub">> WEJŚCIE DO MATRIXA... WITAJ W SYSTEMIE</p>
+            
+            <div class="terminal">
+                <div class="terminal-line">Inicjalizacja systemu... OK</div>
+                <div class="terminal-line">Ładowanie modułów: DESIGN.EXE | CODE.SYS | SEO.DLL</div>
+                <div class="terminal-line">Status: ONLINE | Lokalizacja: RADOM.PL</div>
+                <div class="terminal-line">Tworzę szybkie strony WWW dla firm z Radomia</div>
+                <div class="terminal-line">Cena startowa: 999.00 PLN | Czas realizacji: 48h</div>
+                <div class="terminal-line">Bezpieczne płatności: BLIK | PRZELEW | CRYPTO</div>
+                <div class="terminal-line">_</div>
+            </div>
+
+            <a href="tel:+48576348632" class="cta">> ZADZWOŃ TERAZ</a>
+            <a href="#demo" class="cta cta-outline">> ZOBACZ DEMO</a>
+            <a href="tel:+48576348632" class="tel">📞 576.348.632</a>
+            <p style="margin-top:10px;color:#0a0">> UPTIME: PON-PT 16:00-22:00 | WEEKEND 10:00-20:00</p>
         </div>
     </header>
     <section id="cennik">
         <div class="container">
-            <h2>Cennik - Strony dla firm z Radomia</h2>
+            <h2>>> PAKIETY SYSTEMOWE</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Strona Wizytówka</h3>
-                    <div class="price">999zł <span>jednorazowo</span></div>
+                    <h3>[BASIC] WIZYTÓWKA.SYS</h3>
+                    <div class="price">999.00 <span>PLN</span></div>
                     <ul>
                         <li>Gotowa w 48h</li>
                         <li>1 podstrona + kontakt</li>
-                        <li>Działa na telefonie</li>
+                        <li>Responsive na mobile</li>
                         <li>Formularz kontaktowy</li>
                         <li>Mapa Google</li>
-                        <li>Domena .pl na rok gratis</li>
+                        <li>Domena .PL na rok</li>
                     </ul>
-                    <a href="#kontakt" class="cta">Zamawiam</a>
+                    <a href="#kontakt" class="cta">> ZAMÓW</a>
                 </div>
                 <div class="card">
-                    <h3>Strona Firmowa</h3>
-                    <div class="price">1999zł <span>jednorazowo</span></div>
+                    <h3>[PRO] FIRMOWA.EXE</h3>
+                    <div class="price">1999.00 <span>PLN</span></div>
                     <ul>
                         <li>Do 5 podstron</li>
                         <li>Galeria zdjęć</li>
                         <li>Blog / Aktualności</li>
                         <li>Optymalizacja SEO</li>
-                        <li>Integracja z Google Moja Firma</li>
+                        <li>Google Moja Firma</li>
                         <li>Szkolenie z obsługi</li>
                     </ul>
-                    <a href="#kontakt" class="cta">Zamawiam</a>
+                    <a href="#kontakt" class="cta">> ZAMÓW</a>
                 </div>
                 <div class="card">
-                    <h3>Strona Premium</h3>
-                    <div class="price">2999zł <span>jednorazowo</span></div>
+                    <h3>[ELITE] PREMIUM.DLL</h3>
+                    <div class="price">2999.00 <span>PLN</span></div>
                     <ul>
                         <li>Nielimitowane podstrony</li>
                         <li>System rezerwacji</li>
                         <li>Chat na żywo</li>
-                        <li>Copywriting - teksty piszę za Ciebie</li>
+                        <li>Copywriting - piszę teksty</li>
                         <li>Profesjonalne zdjęcia</li>
                         <li>Wsparcie 6 miesięcy</li>
                     </ul>
-                    <a href="#kontakt" class="cta">Zamawiam</a>
+                    <a href="#kontakt" class="cta">> ZAMÓW</a>
                 </div>
             </div>
         </div>
     </section>
-    <section id="demo" style="background:#111">
+    <section id="demo">
         <div class="container">
-            <h2>Zobacz jak może wyglądać Twoja strona</h2>
-            <p style="text-align:center;color:#aaa;margin-bottom:50px">Kliknij i sprawdź demo dla różnych branż</p>
+            <h2>>> DEMO SYSTEMÓW</h2>
+            <p style="text-align:center;color:#0a0;margin-bottom:50px">> Kliknij i sprawdź symulacje dla różnych branż</p>
             <div class="grid">
                 <div class="card">
                     <span class="demo-badge">DEMO</span>
-                    <h3>Fryzjer / Barber</h3>
-                    <p style="color:#aaa;margin:15px 0">Ciemny motyw, galeria cięć, cennik, rezerwacja telefoniczna</p>
-                    <a href="demo-fryzjer.html" target="_blank" class="cta cta-outline">Zobacz demo</a>
+                    <h3>BARBER_MATRIX</h3>
+                    <p style="color:#0a0;margin:15px 0">Ciemny motyw, galeria cięć, cennik, rezerwacja</p>
+                    <a href="demo-fryzjer.html" target="_blank" class="cta cta-outline">> URUCHOM</a>
                 </div>
                 <div class="card">
                     <span class="demo-badge">DEMO</span>
-                    <h3>Mechanik Samochodowy</h3>
-                    <p style="color:#aaa;margin:15px 0">Lista usług, zdjęcia warsztatu, mapa dojazdu, opinie</p>
-                    <a href="demo-mechanik.html" target="_blank" class="cta cta-outline">Zobacz demo</a>
+                    <h3>AUTO-SERWIS_MATRIX</h3>
+                    <p style="color:#0a0;margin:15px 0">Lista usług, warsztat, mapa, diagnostyka</p>
+                    <a href="demo-mechanik.html" target="_blank" class="cta cta-outline">> URUCHOM</a>
                 </div>
                 <div class="card">
                     <span class="demo-badge">DEMO</span>
-                    <h3>Kosmetyczka</h3>
-                    <p style="color:#aaa;margin:15px 0">Jasny, elegancki design, oferta zabiegów, Instagram feed</p>
-                    <a href="demo-kosmetyczka.html" target="_blank" class="cta cta-outline">Zobacz demo</a>
+                    <h3>VENUS_MATRIX</h3>
+                    <p style="color:#0a0;margin:15px 0">Beauty.exe, oferta zabiegów, Instagram</p>
+                    <a href="demo-kosmetyczka.html" target="_blank" class="cta cta-outline">> URUCHOM</a>
                 </div>
             </div>
-            <p style="text-align:center;color:#666;margin-top:40px">Twoja branża nie ma demo? Zrobię Ci darmową wizualizację w 24h.</p>
+            <p style="text-align:center;color:#0a0;margin-top:40px">> Twoja branża nie ma demo? Zrobię Ci wizualizację w 24h.</p>
         </div>
     </section>
     <section>
         <div class="container">
             <div class="payment">
-                <h3>💳 Płatności</h3>
-                <p style="margin-bottom:20px;color:#aaa">Przelew, BLIK lub kryptowaluty</p>
+                <h3>>> PŁATNOŚCI SYSTEMOWE</h3>
+                <p style="margin-bottom:20px;color:#0a0">> PRZELEW | BLIK | CRYPTO ACCEPTED</p>
                 <div class="crypto-box">
-                    <p style="color:#666;margin-bottom:5px">Binance Pay / USDT:</p>
+                    <p style="color:#0a0;margin-bottom:5px">> BINANCE_PAY / USDT:</p>
                     <p class="crypto-id">1254893255</p>
-                    <button type="button" class="btn-copy" onclick="navigator.clipboard.writeText('1254893255');this.innerText='Skopiowano!'">Kopiuj Binance ID</button>
-                    <p style="color:#666;margin:20px 0 5px 0">Portfel BTC:</p>
+                    <button type="button" class="btn-copy" onclick="navigator.clipboard.writeText('1254893255');this.innerText='> SKOPIOWANO!'">> KOPIUJ ID</button>
+                    <p style="color:#0a0;margin:20px 0 5px 0">> PORTFEL BTC:</p>
                     <p class="crypto-id">bc1pkn23xlf59epn8aj0lsawd70suxss3vp6chaamhm5r44ey5z4da4qew6w3t</p>
-                    <button type="button" class="btn-copy" onclick="navigator.clipboard.writeText('bc1pkn23xlf59epn8aj0lsawd70suxss3vp6chaamhm5r44ey5z4da4qew6w3t');this.innerText='Skopiowano!'">Kopiuj adres BTC</button>
-                    <p style="color:#667eea;margin-top:20px;font-size:0.9rem">Po płatności wyślij SMS na 576 348 632 ze zrzutem ekranu</p>
+                    <button type="button" class="btn-copy" onclick="navigator.clipboard.writeText('bc1pkn23xlf59epn8aj0lsawd70suxss3vp6chaamhm5r44ey5z4da4qew6w3t');this.innerText='> SKOPIOWANO!'">> KOPIUJ BTC</button>
+                    <p style="color:#0f0;margin-top:20px;font-size:0.9rem">> Po płatności wyślij SMS na 576.348.632 ze screenem</p>
                 </div>
-                <p style="color:#aaa;margin-top:20px">Zaliczka 30% przed startem prac. Reszta po akceptacji projektu.</p>
+                <p style="color:#0a0;margin-top:20px">> Zaliczka 30% przed startem. Reszta po akceptacji.</p>
             </div>
         </div>
     </section>
     <section class="form-section" id="kontakt">
         <div class="container">
-            <h2>Darmowa wycena w 2h</h2>
-            <p style="text-align:center;color:#aaa;margin-bottom:40px">Napisz czym się zajmujesz, a ja oddzwonię z ceną</p>
+            <h2>>> DARMOWA WYCENA</h2>
+            <p style="text-align:center;color:#0a0;margin-bottom:40px">> Napisz czym się zajmujesz, oddzwonię z ceną w 2h</p>
             <form action="https://formsubmit.co/maciej1910rr@proton.me" method="POST">
-                <input type="hidden" name="_subject" value="Nowe zapytanie - Strona WWW Radom">
+                <input type="hidden" name="_subject" value="NOWE_ZAPYTANIE - MATRIX">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
                 <div class="form-group">
-                    <label>Imię / Nazwa firmy *</label>
-                    <input type="text" name="Imie" required placeholder="Jan Kowalski / Auto-Serwis">
+                    <label>> IMIE / NAZWA FIRMY *</label>
+                    <input type="text" name="Imie" required placeholder="JAN_KOWALSKI / AUTO-SERWIS">
                 </div>
                 <div class="form-group">
-                    <label>Telefon *</label>
-                    <input type="tel" name="Telefon" required placeholder="600 123 456">
+                    <label>> TELEFON *</label>
+                    <input type="tel" name="Telefon" required placeholder="600.123.456">
                 </div>
                 <div class="form-group">
-                    <label>Email</label>
+                    <label>> EMAIL</label>
                     <input type="email" name="Email" placeholder="jan@firma.pl">
                 </div>
                 <div class="form-group">
-                    <label>Twoja branża *</label>
+                    <label>> TWOJA BRANŻA *</label>
                     <select name="Branza" required>
-                        <option value="">Wybierz...</option>
+                        <option value="">WYBIERZ...</option>
                         <option>Fryzjer / Barber</option>
                         <option>Mechanik samochodowy</option>
                         <option>Kosmetyczka / Beauty</option>
@@ -194,22 +210,19 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Wiadomość *</label>
-                    <textarea name="Wiadomosc" required placeholder="Napisz w 2 zdaniach czego potrzebujesz. Np: Jestem fryzjerem z Radomia, chcę prostą stronę z cennikiem i galerią."></textarea>
+                    <label>> WIADOMOŚĆ *</label>
+                    <textarea name="Wiadomosc" required placeholder="Napisz w 2 zdaniach czego potrzebujesz..."></textarea>
                 </div>
-                <button type="submit" class="cta" style="width:100%">Wyślij i dostanę wycenę</button>
-                <p style="text-align:center;color:#666;margin-top:15px;font-size:0.9rem">Odpowiadam pon-pt 16:00-22:00</p>
+                <button type="submit" class="cta" style="width:100%">> WYŚLIJ I DOSTAŃ WYCENĘ</button>
+                <p style="text-align:center;color:#0a0;margin-top:15px;font-size:0.9rem">> Odpowiadam PON-PT 16:00-22:00</p>
             </form>
         </div>
     </section>
     <footer>
         <div class="container">
             <p style="font-size:1.2rem;margin-bottom:10px">
-                <strong>Maciej Strony WWW</strong>
+                <strong>MACIEJ_STRONY_WWW_MATRIX</strong>
             </p>
-            <p>Tel: +48 576 348 632 | Email: maciej1910rr@proton.me | Radom i okolice</p>
-            <p style="margin-top:20px;color:#444">Pon-Pt 16:00-22:00 | Sob-Nd 10:00-20:00 | SMS 24/7</p>
+            <p>TEL: +48.576.348.632 | EMAIL: maciej1910rr@proton.me | RADOM</p>
+            <p style="margin-top:20px;color:#0a0">PON-PT 16:00-22:00 | SOB-ND 10:00-20:00 | SMS 24/7</p>
         </div>
-    </footer>
-</body>
-</html>
