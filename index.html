@@ -28,7 +28,9 @@
         .payment {background:#111;border:2px solid #667eea;padding:40px;border-radius:12px;text-align:center;margin-top:40px}
         .payment h3 {margin-bottom:20px}
         .crypto-box {background:#0a0a0a;padding:20px;border-radius:8px;margin:20px 0;border:1px solid #222}
-        .crypto-id {font-family:monospace;font-size:1.3rem;color:#667eea;word-break:break-all}
+        .crypto-id {font-family:monospace;font-size:1.3rem;color:#667eea;word-break:break-all;margin:10px 0}
+        .btn-copy {background:#222;color:#667eea;border:1px solid #667eea;padding:10px 20px;border-radius:6px;cursor:pointer;margin-top:10px}
+        .btn-copy:hover {background:#667eea;color:#fff}
         footer {padding:40px 0;text-align:center;border-top:1px solid #222;color:#666}
         @media(max-width:768px){h1{font-size:2rem}h2{font-size:1.8rem}}
     </style>
@@ -90,16 +92,18 @@
             </div>
 
             <div class="payment">
-                <h3>💳 Płatności - wygodnie jak chcesz</h3>
-                <p style="margin-bottom:20px;color:#aaa">Akceptuję przelew, BLIK oraz kryptowaluty</p>
+                <h3>💳 Płatności Crypto</h3>
+                <p style="margin-bottom:20px;color:#aaa">Akceptuję USDT przez Binance Pay</p>
                 
                 <div class="crypto-box">
-                    <p style="color:#666;margin-bottom:10px">Binance Pay / USDT / BTC</p>
-                    <p class="crypto-id">ID: 1254893255</p>
-                    <p style="color:#666;margin-top:10px;font-size:0.9rem">Wyślij zrzut ekranu płatności na SMS: 576 348 632</p>
+                    <p style="color:#666;margin-bottom:5px">Binance Pay ID:</p>
+                    <p class="crypto-id" id="binanceId">1254893255</p>
+                    <button class="btn-copy" onclick="navigator.clipboard.writeText('1254893255');this.innerText='Skopiowano!'">Kopiuj ID</button>
+                    <p style="color:#666;margin-top:15px;font-size:0.9rem">Otwórz aplikację Binance → Pay → Wyślij → Wklej ID → Wyślij USDT</p>
+                    <p style="color:#667eea;margin-top:15px;font-size:0.9rem">Po płatności wyślij SMS na 576 348 632 ze zrzutem ekranu</p>
                 </div>
 
-                <p style="color:#aaa;margin-top:20px">Faktura VAT na życzenie. Zaliczka 30% przed startem.</p>
+                <p style="color:#aaa;margin-top:20px">Przelew / BLIK też dostępne. Faktura VAT na życzenie. Zaliczka 30% przed startem.</p>
             </div>
         </div>
     </section>
