@@ -38,15 +38,15 @@
         .btn-blue:hover {background: #0056b3;}
         .btn-purple {background: #6f42c1;}
         .btn-purple:hover {background: #5a32a3;}
-        .btn-paypal {background: #FFC439; color: #003087;}
-        .btn-paypal:hover {background: #f2bb2e;}
+        .btn-orange {background: #f7931a; color: white;}
+        .btn-orange:hover {background: #e6840e;}
         .features {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; padding: 60px 20px; background: white;}
         .feature {text-align: center; padding: 20px;}
         .feature h3 {margin: 15px 0; color: #667eea;}
         .pricing {background: #f8f9fa; padding: 60px 20px; text-align: center;}
         .price-box {background: white; padding: 40px; border-radius: 12px; display: inline-block; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 20px;}
         .price {font-size: 3rem; font-weight: 800; color: #667eea;}
-        .paypal-box {background: white; padding: 30px; border-radius: 12px; max-width: 400px; margin: 20px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.1);}
+        .payment-box {background: white; padding: 30px; border-radius: 12px; max-width: 500px; margin: 20px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.1);}
         .form-section {background: white; padding: 60px 20px;}
         .contact-buttons {text-align: center; margin-bottom: 40px;}
         .contact-buttons h3 {margin-bottom: 20px; color: #333;}
@@ -56,8 +56,8 @@
         button:hover {background: #5568d3;}
         .seo-text {padding: 40px 20px; max-width: 800px; margin: auto; background: #fff;}
         .seo-text h2 {color: #667eea; margin-bottom: 15px;}
-        .crypto {background: #f8f9fa; padding: 30px; border-radius: 12px; margin-top: 30px; text-align: center;}
-        .crypto code {background: #e9ecef; padding: 10px; border-radius: 5px; display: block; margin: 10px 0; word-break: break-all;}
+        .crypto code {background: #e9ecef; padding: 15px; border-radius: 8px; display: block; margin: 15px 0; word-break: break-all; font-size: 0.9rem; cursor: pointer;}
+        .copy-btn {background: #6f42c1; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; margin-top: 10px;}
         footer {background: #333; color: white; text-align: center; padding: 30px 20px;}
         @media (max-width: 768px) {.hero h1 {font-size: 2rem;} .btn {display: block; margin: 10px auto; max-width: 300px;}}
     </style>
@@ -82,7 +82,7 @@
             <p>90% klientów sprawdzi Cię na telefonie. Strona będzie idealna.</p>
         </div>
         <div class="feature">
-            <h3>💬 Dostajesz Maila + SMS</h3>
+            <h3>💬 Dostajesz Maila</h3>
             <p>Klient wysyła zapytanie, Ty od razu dostajesz maila. Zero czekania.</p>
         </div>
     </section>
@@ -100,23 +100,17 @@
                 ✓ Pomoc przez 30 dni</p>
             </div>
 
-            <div class="paypal-box">
-                <h3>💳 Zapłać teraz PayPal / Kartą</h3>
-                <p>Bezpieczna płatność. Dostajesz fakturę.</p>
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                    <input type="hidden" name="cmd" value="_xclick">
-                    <input type="hidden" name="business" value="maciej1910rr@proton.me">
-                    <input type="hidden" name="item_name" value="Strona WWW Radom - Pakiet START">
-                    <input type="hidden" name="amount" value="999.00">
-                    <input type="hidden" name="currency_code" value="PLN">
-                    <input type="hidden" name="button_subtype" value="services">
-                    <input type="hidden" name="no_note" value="0">
-                    <input type="hidden" name="cn" value="Dodaj uwagi dla sprzedawcy">
-                    <input type="hidden" name="return" value="https://maciej1910rr.github.io/strona/">
-                    <input type="hidden" name="cancel_return" value="https://maciej1910rr.github.io/strona/">
-                    <button type="submit" class="btn-paypal" style="width:100%;">💳 Zapłać 999zł przez PayPal</button>
-                </form>
-                <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">Akceptujemy: Karta, BLIK, PayPal, Przelewy24</p>
+            <div class="payment-box">
+                <h3>💰 Jak zapłacić?</h3>
+                <p><strong>1. BLIK na telefon:</strong></p>
+                <a href="tel:+48576348632" class="btn btn-blue" style="width:100%; margin-bottom:15px;">📱 BLIK: 576 348 632</a>
+                
+                <p><strong>2. Przelew tradycyjny:</strong><br>Wyślę numer konta na maila/SMS</p>
+                
+                <p style="margin-top:20px;"><strong>3. Bitcoin (BTC):</strong></p>
+                <code id="btc-address">WKLEJ_TUTAJ_SWÓJ_ADRES_BTC_Z_BINANCE</code>
+                <button class="copy-btn" onclick="copyBTC()">📋 Kopiuj adres BTC</button>
+                <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">Sieć: Bitcoin BTC. Po wpłacie wyślij screen na maila.</p>
             </div>
         </div>
     </section>
@@ -145,14 +139,6 @@
                 <input type="hidden" name="_subject" value="Nowe zapytanie o stronę WWW Radom!">
                 <button type="submit">Wyślij - oddzwonię za darmo</button>
             </form>
-
-            <div class="crypto">
-                <h3>💰 Płatność kryptowalutami</h3>
-                <p>Akceptuję Bitcoin (BTC). Po wycenie dostaniesz adres do wpłaty.</p>
-                <p><strong>BTC:</strong></p>
-                <code>TUTAJ_WKLEJ_SWÓJ_ADRES_BTC</code>
-                <p style="font-size: 0.9rem; opacity: 0.7;">Wyślij mi screen po przelewie na maila.</p>
-            </div>
         </div>
     </section>
 
@@ -161,6 +147,14 @@
         <p>Tel: +48 485 763 486 | Email: maciej1910rr@proton.me | Radom i okolice</p>
         <p>© 2026 Wszelkie prawa zastrzeżone</p>
     </footer>
+
+    <script>
+        function copyBTC() {
+            const btcAddress = document.getElementById('btc-address').textContent;
+            navigator.clipboard.writeText(btcAddress);
+            alert('Adres BTC skopiowany! Wklej w Binance przy wysyłaniu.');
+        }
+    </script>
 
 </body>
 </html>
