@@ -12,7 +12,7 @@
         header {padding:60px 0;text-align:center;border-bottom:1px solid #222}
         h1 {font-size:3rem;margin-bottom:20px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
         .sub {font-size:1.3rem;color:#aaa;margin-bottom:30px}
-        .cta {display:inline-block;background:#667eea;color:#fff;padding:18px 40px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.1rem;transition:.3s}
+        .cta {display:inline-block;background:#667eea;color:#fff;padding:18px 40px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.1rem;transition:.3s;border:none;cursor:pointer}
         .cta:hover {background:#5568d3;transform:translateY(-2px)}
         .tel {display:block;margin-top:15px;color:#667eea;font-size:1.2rem;text-decoration:none}
         section {padding:80px 0}
@@ -26,11 +26,17 @@
         ul li {padding:10px 0;color:#ccc}
         ul li:before {content:"✓ ";color:#667eea;font-weight:700;margin-right:8px}
         .payment {background:#111;border:2px solid #667eea;padding:40px;border-radius:12px;text-align:center;margin-top:40px}
-        .payment h3 {margin-bottom:20px}
         .crypto-box {background:#0a0a0a;padding:20px;border-radius:8px;margin:20px 0;border:1px solid #222}
         .crypto-id {font-family:monospace;font-size:1.3rem;color:#667eea;word-break:break-all;margin:10px 0}
         .btn-copy {background:#222;color:#667eea;border:1px solid #667eea;padding:10px 20px;border-radius:6px;cursor:pointer;margin-top:10px}
         .btn-copy:hover {background:#667eea;color:#fff}
+        .form-section {background:#111;padding:60px 0}
+        form {max-width:600px;margin:0 auto}
+        .form-group {margin-bottom:20px}
+        label {display:block;margin-bottom:8px;color:#aaa}
+        input, textarea {width:100%;padding:15px;background:#0a0a0a;border:1px solid #222;border-radius:8px;color:#fff;font-size:1rem;font-family:inherit}
+        input:focus, textarea:focus {outline:none;border-color:#667eea}
+        textarea {resize:vertical;min-height:120px}
         footer {padding:40px 0;text-align:center;border-top:1px solid #222;color:#666}
         @media(max-width:768px){h1{font-size:2rem}h2{font-size:1.8rem}}
     </style>
@@ -61,7 +67,7 @@
                         <li>Mapa Google</li>
                         <li>Domena .pl na rok gratis</li>
                     </ul>
-                    <a href="tel:+48576348632" class="cta">Zamawiam</a>
+                    <a href="#kontakt" class="cta">Zamawiam</a>
                 </div>
                 <div class="card">
                     <h3>Strona Firmowa</h3>
@@ -74,7 +80,7 @@
                         <li>Integracja z Google Moja Firma</li>
                         <li>Szkolenie z obsługi</li>
                     </ul>
-                    <a href="tel:+48576348632" class="cta">Zamawiam</a>
+                    <a href="#kontakt" class="cta">Zamawiam</a>
                 </div>
                 <div class="card">
                     <h3>Strona Premium</h3>
@@ -87,7 +93,7 @@
                         <li>Profesjonalne zdjęcia</li>
                         <li>Wsparcie 6 miesięcy</li>
                     </ul>
-                    <a href="tel:+48576348632" class="cta">Zamawiam</a>
+                    <a href="#kontakt" class="cta">Zamawiam</a>
                 </div>
             </div>
 
@@ -98,13 +104,53 @@
                 <div class="crypto-box">
                     <p style="color:#666;margin-bottom:5px">Binance Pay ID:</p>
                     <p class="crypto-id" id="binanceId">1254893255</p>
-                    <button class="btn-copy" onclick="navigator.clipboard.writeText('1254893255');this.innerText='Skopiowano!'">Kopiuj ID</button>
+                    <button type="button" class="btn-copy" onclick="navigator.clipboard.writeText('1254893255');this.innerText='Skopiowano!'">Kopiuj ID</button>
                     <p style="color:#666;margin-top:15px;font-size:0.9rem">Otwórz aplikację Binance → Pay → Wyślij → Wklej ID → Wyślij USDT</p>
                     <p style="color:#667eea;margin-top:15px;font-size:0.9rem">Po płatności wyślij SMS na 576 348 632 ze zrzutem ekranu</p>
                 </div>
 
                 <p style="color:#aaa;margin-top:20px">Przelew / BLIK też dostępne. Faktura VAT na życzenie. Zaliczka 30% przed startem.</p>
             </div>
+        </div>
+    </section>
+
+    <section class="form-section" id="kontakt">
+        <div class="container">
+            <h2>Napisz do mnie</h2>
+            <p style="text-align:center;color:#aaa;margin-bottom:40px">Odpowiadam w ciągu 2h w godzinach 16:00-22:00</p>
+            
+            <form action="https://formsubmit.co/maciej1910rr@proton.me" method="POST">
+                <input type="hidden" name="_subject" value="Nowe zapytanie - Strona WWW Radom">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                
+                <div class="form-group">
+                    <label>Imię / Nazwa firmy *</label>
+                    <input type="text" name="Imie" required placeholder="Jan Kowalski / Auto-Serwis">
+                </div>
+                
+                <div class="form-group">
+                    <label>Telefon *</label>
+                    <input type="tel" name="Telefon" required placeholder="600 123 456">
+                </div>
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="Email" placeholder="jan@firma.pl">
+                </div>
+                
+                <div class="form-group">
+                    <label>Jaki pakiet Cię interesuje?</label>
+                    <input type="text" name="Pakiet" placeholder="Wizytówka 999zł / Firmowa 1999zł / Premium 2999zł">
+                </div>
+                
+                <div class="form-group">
+                    <label>Wiadomość *</label>
+                    <textarea name="Wiadomosc" required placeholder="Opisz jaką stronę potrzebujesz. Np: Jestem fryzjerem z Radomia, chcę prostą stronę z cennikiem i zdjęciami."></textarea>
+                </div>
+                
+                <button type="submit" class="cta" style="width:100%">Wyślij zapytanie</button>
+            </form>
         </div>
     </section>
 
