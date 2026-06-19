@@ -14,7 +14,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Maciej Strony WWW - Strony WWW Radom",
-      "telephone": "+48-48576348632",
+      "telephone": "+48-485763486",
       "email": "maciej1910rr@proton.me",
       "address": {
         "@type": "PostalAddress",
@@ -32,23 +32,34 @@
         .hero {background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 80px 20px; text-align: center;}
         .hero h1 {font-size: 2.5rem; margin-bottom: 20px; font-weight: 800;}
         .hero p {font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9;}
-        .btn {display: inline-block; background: #25D366; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem;}
+        .btn {display: inline-block; background: #25D366; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; margin: 5px;}
         .btn:hover {background: #1da851;}
+        .btn-blue {background: #007bff;}
+        .btn-blue:hover {background: #0056b3;}
+        .btn-purple {background: #6f42c1;}
+        .btn-purple:hover {background: #5a32a3;}
+        .btn-paypal {background: #FFC439; color: #003087;}
+        .btn-paypal:hover {background: #f2bb2e;}
         .features {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; padding: 60px 20px; background: white;}
         .feature {text-align: center; padding: 20px;}
         .feature h3 {margin: 15px 0; color: #667eea;}
         .pricing {background: #f8f9fa; padding: 60px 20px; text-align: center;}
-        .price-box {background: white; padding: 40px; border-radius: 12px; display: inline-block; box-shadow: 0 5px 15px rgba(0,0,0,0.1);}
+        .price-box {background: white; padding: 40px; border-radius: 12px; display: inline-block; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 20px;}
         .price {font-size: 3rem; font-weight: 800; color: #667eea;}
+        .paypal-box {background: white; padding: 30px; border-radius: 12px; max-width: 400px; margin: 20px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.1);}
         .form-section {background: white; padding: 60px 20px;}
+        .contact-buttons {text-align: center; margin-bottom: 40px;}
+        .contact-buttons h3 {margin-bottom: 20px; color: #333;}
         form {max-width: 500px; margin: 0 auto;}
         input, textarea {width: 100%; padding: 12px; margin-bottom: 15px; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;}
         button {width: 100%; background: #667eea; color: white; padding: 15px; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer;}
         button:hover {background: #5568d3;}
         .seo-text {padding: 40px 20px; max-width: 800px; margin: auto; background: #fff;}
         .seo-text h2 {color: #667eea; margin-bottom: 15px;}
+        .crypto {background: #f8f9fa; padding: 30px; border-radius: 12px; margin-top: 30px; text-align: center;}
+        .crypto code {background: #e9ecef; padding: 10px; border-radius: 5px; display: block; margin: 10px 0; word-break: break-all;}
         footer {background: #333; color: white; text-align: center; padding: 30px 20px;}
-        @media (max-width: 768px) {.hero h1 {font-size: 2rem;}}
+        @media (max-width: 768px) {.hero h1 {font-size: 2rem;} .btn {display: block; margin: 10px auto; max-width: 300px;}}
     </style>
 </head>
 <body>
@@ -71,8 +82,8 @@
             <p>90% klientów sprawdzi Cię na telefonie. Strona będzie idealna.</p>
         </div>
         <div class="feature">
-            <h3>💬 Formularz + SMS</h3>
-            <p>Klient wysyła zapytanie, Ty od razu dostajesz SMS. Zero czekania.</p>
+            <h3>💬 Dostajesz Maila + SMS</h3>
+            <p>Klient wysyła zapytanie, Ty od razu dostajesz maila. Zero czekania.</p>
         </div>
     </section>
 
@@ -88,6 +99,25 @@
                 ✓ Wrzucenie na internet<br>
                 ✓ Pomoc przez 30 dni</p>
             </div>
+
+            <div class="paypal-box">
+                <h3>💳 Zapłać teraz PayPal / Kartą</h3>
+                <p>Bezpieczna płatność. Dostajesz fakturę.</p>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="maciej1910rr@proton.me">
+                    <input type="hidden" name="item_name" value="Strona WWW Radom - Pakiet START">
+                    <input type="hidden" name="amount" value="999.00">
+                    <input type="hidden" name="currency_code" value="PLN">
+                    <input type="hidden" name="button_subtype" value="services">
+                    <input type="hidden" name="no_note" value="0">
+                    <input type="hidden" name="cn" value="Dodaj uwagi dla sprzedawcy">
+                    <input type="hidden" name="return" value="https://maciej1910rr.github.io/strona/">
+                    <input type="hidden" name="cancel_return" value="https://maciej1910rr.github.io/strona/">
+                    <button type="submit" class="btn-paypal" style="width:100%;">💳 Zapłać 999zł przez PayPal</button>
+                </form>
+                <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">Akceptujemy: Karta, BLIK, PayPal, Przelewy24</p>
+            </div>
         </div>
     </section>
 
@@ -98,7 +128,39 @@
 
     <section class="form-section" id="kontakt">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 30px;">Darmowa Wycena - Odpiszę w 15 minut</h2>
+            <div class="contact-buttons">
+                <h3>Kontakt bezpośredni - oddzwonię w 15 minut</h3>
+                <a href="tel:+48576348632" class="btn">📞 Zadzwoń: 576 348 632</a>
+                <a href="sms:+48576348632?body=Cześć, chcę stronę www za 999zł" class="btn btn-blue">💬 Wyślij SMS</a>
+                <a href="mailto:maciej1910rr@proton.me?subject=Strona WWW Radom 999zł" class="btn btn-purple">📧 Napisz maila</a>
+                <a href="https://wa.me/48576348632?text=Cześć, chcę stronę www za 999zł" class="btn">🟢 WhatsApp</a>
+            </div>
+
+            <h2 style="text-align: center; margin-bottom: 30px;">Lub wyślij formularz - Darmowa Wycena</h2>
             <form action="https://formspree.io/f/xjgdqevn" method="POST">
                 <input type="text" name="name" placeholder="Twoje imię" required>
-                <input type="tel" name="phone" placeholder="Numer telefonu" required
+                <input type="tel" name="phone" placeholder="Numer telefonu" required>
+                <input type="email" name="email" placeholder="Twój email" required>
+                <textarea name="message" rows="4" placeholder="Jaki masz biznes? Np: salon fryzjerski" required></textarea>
+                <input type="hidden" name="_subject" value="Nowe zapytanie o stronę WWW Radom!">
+                <button type="submit">Wyślij - oddzwonię za darmo</button>
+            </form>
+
+            <div class="crypto">
+                <h3>💰 Płatność kryptowalutami</h3>
+                <p>Akceptuję Bitcoin (BTC). Po wycenie dostaniesz adres do wpłaty.</p>
+                <p><strong>BTC:</strong></p>
+                <code>TUTAJ_WKLEJ_SWÓJ_ADRES_BTC</code>
+                <p style="font-size: 0.9rem; opacity: 0.7;">Wyślij mi screen po przelewie na maila.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Maciej Strony WWW - Strony WWW Radom</strong></p>
+        <p>Tel: +48 485 763 486 | Email: maciej1910rr@proton.me | Radom i okolice</p>
+        <p>© 2026 Wszelkie prawa zastrzeżone</p>
+    </footer>
+
+</body>
+</html>
