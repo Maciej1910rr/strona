@@ -9,22 +9,29 @@
         * {margin:0;padding:0;box-sizing:border-box}
         body {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#fff;background:#0a0a0a}
         .container {max-width:1100px;margin:0 auto;padding:0 20px}
-        header {padding:60px 0;text-align:center;border-bottom:1px solid #222}
+        nav {padding:20px 0;border-bottom:1px solid #222;text-align:center}
+        nav a {color:#aaa;text-decoration:none;margin:0 15px;font-weight:500}
+        nav a:hover {color:#667eea}
+        header {padding:60px 0;text-align:center}
         h1 {font-size:3rem;margin-bottom:20px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
         .sub {font-size:1.3rem;color:#aaa;margin-bottom:30px}
         .cta {display:inline-block;background:#667eea;color:#fff;padding:18px 40px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.1rem;transition:.3s;border:none;cursor:pointer}
         .cta:hover {background:#5568d3;transform:translateY(-2px)}
+        .cta-outline {background:transparent;border:2px solid #667eea;color:#667eea}
+        .cta-outline:hover {background:#667eea;color:#fff}
         .tel {display:block;margin-top:15px;color:#667eea;font-size:1.2rem;text-decoration:none}
         section {padding:80px 0}
         h2 {font-size:2.5rem;text-align:center;margin-bottom:50px}
         .grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:40px}
-        .card {background:#111;border:1px solid #222;padding:40px;border-radius:12px}
+        .card {background:#111;border:1px solid #222;padding:40px;border-radius:12px;transition:.3s}
+        .card:hover {border-color:#667eea;transform:translateY(-5px)}
         .card h3 {font-size:1.5rem;margin-bottom:15px;color:#667eea}
         .price {font-size:2.5rem;font-weight:700;margin:20px 0;color:#fff}
         .price span {font-size:1rem;color:#666}
         ul {list-style:none;margin:20px 0}
         ul li {padding:10px 0;color:#ccc}
         ul li:before {content:"✓ ";color:#667eea;font-weight:700;margin-right:8px}
+        .demo-badge {background:#667eea;color:#fff;padding:5px 12px;border-radius:20px;font-size:0.8rem;display:inline-block;margin-bottom:15px}
         .payment {background:#111;border:2px solid #667eea;padding:40px;border-radius:12px;text-align:center;margin-top:40px}
         .crypto-box {background:#0a0a0a;padding:20px;border-radius:8px;margin:20px 0;border:1px solid #222}
         .crypto-id {font-family:monospace;font-size:1.3rem;color:#667eea;word-break:break-all;margin:10px 0}
@@ -34,25 +41,36 @@
         form {max-width:600px;margin:0 auto}
         .form-group {margin-bottom:20px}
         label {display:block;margin-bottom:8px;color:#aaa}
-        input, textarea {width:100%;padding:15px;background:#0a0a0a;border:1px solid #222;border-radius:8px;color:#fff;font-size:1rem;font-family:inherit}
-        input:focus, textarea:focus {outline:none;border-color:#667eea}
+        input, textarea, select {width:100%;padding:15px;background:#0a0a0a;border:1px solid #222;border-radius:8px;color:#fff;font-size:1rem;font-family:inherit}
+        input:focus, textarea:focus, select:focus {outline:none;border-color:#667eea}
         textarea {resize:vertical;min-height:120px}
         footer {padding:40px 0;text-align:center;border-top:1px solid #222;color:#666}
-        @media(max-width:768px){h1{font-size:2rem}h2{font-size:1.8rem}}
+        @media(max-width:768px){h1{font-size:2rem}h2{font-size:1.8rem}nav a{display:block;margin:10px 0}}
     </style>
 </head>
 <body>
-    <header>
+    <nav>
+        <div class="container">
+            <a href="#start">Start</a>
+            <a href="#cennik">Cennik</a>
+            <a href="#demo">Demo</a>
+            <a href="#kontakt">Kontakt</a>
+            <a href="tel:+48576348632">📞 576 348 632</a>
+        </div>
+    </nav>
+
+    <header id="start">
         <div class="container">
             <h1>Strony WWW Radom</h1>
             <p class="sub">Tanie, szybkie strony internetowe dla firm z Radomia od 999zł</p>
             <a href="tel:+48576348632" class="cta">Zadzwoń teraz</a>
+            <a href="#demo" class="cta cta-outline" style="margin-left:10px">Zobacz Demo</a>
             <a href="tel:+48576348632" class="tel">📞 576 348 632</a>
             <p style="margin-top:10px;color:#666">Odbieram pon-pt 16:00-22:00, weekendy 10:00-20:00</p>
         </div>
     </header>
 
-    <section>
+    <section id="cennik">
         <div class="container">
             <h2>Cennik - Strony dla firm z Radomia</h2>
             <div class="grid">
@@ -96,33 +114,70 @@
                     <a href="#kontakt" class="cta">Zamawiam</a>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <section id="demo" style="background:#111">
+        <div class="container">
+            <h2>Zobacz jak może wyglądać Twoja strona</h2>
+            <p style="text-align:center;color:#aaa;margin-bottom:50px">Kliknij i sprawdź demo dla różnych branż</p>
+            <div class="grid">
+                <div class="card">
+                    <span class="demo-badge">DEMO</span>
+                    <h3>Fryzjer / Barber</h3>
+                    <p style="color:#aaa;margin:15px 0">Ciemny motyw, galeria cięć, cennik, rezerwacja telefoniczna</p>
+                    <a href="demo-fryzjer.html" target="_blank" class="cta cta-outline">Zobacz demo</a>
+                </div>
+                <div class="card">
+                    <span class="demo-badge">DEMO</span>
+                    <h3>Mechanik Samochodowy</h3>
+                    <p style="color:#aaa;margin:15px 0">Lista usług, zdjęcia warsztatu, mapa dojazdu, opinie</p>
+                    <a href="demo-mechanik.html" target="_blank" class="cta cta-outline">Zobacz demo</a>
+                </div>
+                <div class="card">
+                    <span class="demo-badge">DEMO</span>
+                    <h3>Kosmetyczka</h3>
+                    <p style="color:#aaa;margin:15px 0">Jasny, elegancki design, oferta zabiegów, Instagram feed</p>
+                    <a href="demo-kosmetyczka.html" target="_blank" class="cta cta-outline">Zobacz demo</a>
+                </div>
+            </div>
+            <p style="text-align:center;color:#666;margin-top:40px">Twoja branża nie ma demo? Zrobię Ci darmową wizualizację w 24h.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
             <div class="payment">
-                <h3>💳 Płatności Crypto</h3>
-                <p style="margin-bottom:20px;color:#aaa">Akceptuję USDT przez Binance Pay</p>
+                <h3>💳 Płatności</h3>
+                <p style="margin-bottom:20px;color:#aaa">Przelew, BLIK lub kryptowaluty</p>
                 
                 <div class="crypto-box">
-                    <p style="color:#666;margin-bottom:5px">Binance Pay ID:</p>
-                    <p class="crypto-id" id="binanceId">1254893255</p>
-                    <button type="button" class="btn-copy" onclick="navigator.clipboard.writeText('1254893255');this.innerText='Skopiowano!'">Kopiuj ID</button>
-                    <p style="color:#666;margin-top:15px;font-size:0.9rem">Otwórz aplikację Binance → Pay → Wyślij → Wklej ID → Wyślij USDT</p>
-                    <p style="color:#667eea;margin-top:15px;font-size:0.9rem">Po płatności wyślij SMS na 576 348 632 ze zrzutem ekranu</p>
+                    <p style="color:#666;margin-bottom:5px">Binance Pay / USDT:</p>
+                    <p class="crypto-id">1254893255</p>
+                    <button type="button" class="btn-copy" onclick="navigator.clipboard.writeText('1254893255');this.innerText='Skopiowano!'">Kopiuj Binance ID</button>
+                    
+                    <p style="color:#666;margin:20px 0 5px 0">Portfel BTC:</p>
+                    <p class="crypto-id" style="font-size:1rem">bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh</p>
+                    <button type="button" class="btn-copy" onclick="navigator.clipboard.writeText('bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh');this.innerText='Skopiowano!'">Kopiuj adres BTC</button>
+                    
+                    <p style="color:#667eea;margin-top:20px;font-size:0.9rem">Po płatności wyślij SMS na 576 348 632 ze zrzutem ekranu</p>
                 </div>
 
-                <p style="color:#aaa;margin-top:20px">Przelew / BLIK też dostępne. Faktura VAT na życzenie. Zaliczka 30% przed startem.</p>
+                <p style="color:#aaa;margin-top:20px">Zaliczka 30% przed startem prac. Reszta po akceptacji projektu.</p>
             </div>
         </div>
     </section>
 
     <section class="form-section" id="kontakt">
         <div class="container">
-            <h2>Napisz do mnie</h2>
-            <p style="text-align:center;color:#aaa;margin-bottom:40px">Odpowiadam w ciągu 2h w godzinach 16:00-22:00</p>
+            <h2>Darmowa wycena w 2h</h2>
+            <p style="text-align:center;color:#aaa;margin-bottom:40px">Napisz czym się zajmujesz, a ja oddzwonię z ceną</p>
             
             <form action="https://formsubmit.co/maciej1910rr@proton.me" method="POST">
                 <input type="hidden" name="_subject" value="Nowe zapytanie - Strona WWW Radom">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://maciej1910rr.github.io/strona/dzieki.html">
                 
                 <div class="form-group">
                     <label>Imię / Nazwa firmy *</label>
@@ -140,37 +195,28 @@
                 </div>
                 
                 <div class="form-group">
-                    <label>Jaki pakiet Cię interesuje?</label>
-                    <input type="text" name="Pakiet" placeholder="Wizytówka 999zł / Firmowa 1999zł / Premium 2999zł">
+                    <label>Twoja branża *</label>
+                    <select name="Branza" required>
+                        <option value="">Wybierz...</option>
+                        <option>Fryzjer / Barber</option>
+                        <option>Mechanik samochodowy</option>
+                        <option>Kosmetyczka / Beauty</option>
+                        <option>Restauracja / Bar</option>
+                        <option>Budowlanka / Remonty</option>
+                        <option>Lekarz / Dentysta</option>
+                        <option>Prawnik / Księgowy</option>
+                        <option>Inna - opiszę poniżej</option>
+                    </select>
                 </div>
                 
                 <div class="form-group">
                     <label>Wiadomość *</label>
-                    <textarea name="Wiadomosc" required placeholder="Opisz jaką stronę potrzebujesz. Np: Jestem fryzjerem z Radomia, chcę prostą stronę z cennikiem i zdjęciami."></textarea>
+                    <textarea name="Wiadomosc" required placeholder="Napisz w 2 zdaniach czego potrzebujesz. Np: Jestem fryzjerem z Radomia, chcę prostą stronę z cennikiem i galerią."></textarea>
                 </div>
                 
-                <button type="submit" class="cta" style="width:100%">Wyślij zapytanie</button>
+                <button type="submit" class="cta" style="width:100%">Wyślij i dostanę wycenę</button>
+                <p style="text-align:center;color:#666;margin-top:15px;font-size:0.9rem">Odpowiadam pon-pt 16:00-22:00</p>
             </form>
-        </div>
-    </section>
-
-    <section style="background:#111">
-        <div class="container">
-            <h2>Dlaczego Radom wybiera mnie?</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>⚡ Szybko</h3>
-                    <p>Strona gotowa w 48h. Nie czekasz 3 tygodni jak u agencji z Warszawy.</p>
-                </div>
-                <div class="card">
-                    <h3>💰 Tanio</h3>
-                    <p>Ceny od 999zł. Bez abonamentów. Płacisz raz, strona jest Twoja na zawsze.</p>
-                </div>
-                <div class="card">
-                    <h3>📍 Lokalnie</h3>
-                    <p>Jestem z Radomia. Rozumiem lokalny rynek. Obsługuję: Radom, Pionki, Kozienice, Szydłowiec.</p>
-                </div>
-            </div>
         </div>
     </section>
 
