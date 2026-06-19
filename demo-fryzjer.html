@@ -32,9 +32,86 @@
         .o-nas {background:#111;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
         .o-nas img {width:100%;border:3px solid #d4af37}
         .o-nas p {font-size:1.1rem;color:#bbb;margin-bottom:20px}
-        .kontakt-box {background:#d4af37;color:#000;padding:60px;border-radius:0;text-align:center}
+        .kontakt-box {background:#d4af37;color:#000;padding:60px;text-align:center}
         .kontakt-box h3 {font-size:2rem;margin-bottom:20px}
         .tel-duzy {font-size:2.5rem;font-weight:900;text-decoration:none;color:#000;display:block;margin:20px 0}
         footer {padding:50px 0;text-align:center;border-top:2px solid #d4af37;background:#000}
         .badge-demo {position:fixed;bottom:20px;right:20px;background:#667eea;color:#fff;padding:10px 20px;border-radius:30px;font-size:0.8rem;z-index:999}
-        @media(max
+        @media(max-width:768px){h1{font-size:2.5rem}.galeria{grid-template-columns:1fr}.o-nas{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <div class="badge-demo">DEMO - Strona wykonana przez Maciej Strony WWW</div>
+    <nav>
+        <div class="container">
+            <a href="#start">Start</a>
+            <a href="#cennik">Cennik</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#kontakt">Kontakt</a>
+        </div>
+    </nav>
+    <header id="start">
+        <div class="container">
+            <h1><span class="gold">Barber</span> Classic</h1>
+            <p class="sub">Tradycyjne rzemiosło. Nowoczesny styl. Radom</p>
+            <a href="tel:+48555111222" class="cta">Umów wizytę: 555 111 222</a>
+            <p style="margin-top:20px;color:#888">Pon-Sob: 9:00 - 19:00 | ul. Warszawska 12, Radom</p>
+        </div>
+    </header>
+    <section id="cennik">
+        <div class="container">
+            <h2>Cennik Usług</h2>
+            <div class="cennik">
+                <div class="pozycja">
+                    <h3>Strzyżenie Męskie</h3>
+                    <p>Klasyczne cięcie nożyczkami i maszynką, mycie, stylizacja</p>
+                    <div class="cena">60zł</div>
+                </div>
+                <div class="pozycja">
+                    <h3>Strzyżenie Brody</h3>
+                    <p>Trymowanie, konturowanie, olejowanie, modelowanie</p>
+                    <div class="cena">40zł</div>
+                </div>
+                <div class="pozycja">
+                    <h3>Komplet: Włosy + Broda</h3>
+                    <p>Pełny pakiet barberski. Oszczędzasz 10zł</p>
+                    <div class="cena">90zł</div>
+                </div>
+                <div class="pozycja">
+                    <h3>Golenie Brzytwą</h3>
+                    <p>Tradycyjne golenie na gorący ręcznik. Relaks 100%</p>
+                    <div class="cena">50zł</div>
+                </div>
+                <div class="pozycja">
+                    <h3>Strzyżenie Dziecięce</h3>
+                    <p>Dla chłopców do 12 lat. Cierpliwość gratis</p>
+                    <div class="cena">40zł</div>
+                </div>
+                <div class="pozycja">
+                    <h3>Odsiwianie / Kamuflaż</h3>
+                    <p>Dyskretne pokrycie siwych włosów i brody</p>
+                    <div class="cena">70zł</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="galeria" style="background:#111">
+        <div class="container">
+            <h2>Nasze Realizacje</h2>
+            <div class="galeria">
+                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=500" alt="Strzyżenie fade">
+                <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500" alt="Modelowanie brody">
+                <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=500" alt="Klasyczne cięcie">
+                <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500" alt="Barber przy pracy">
+                <img src="https://images.unsplash.com/photo-1521498542256-5aeb47ba2b36?w=500" alt="Stylizacja">
+                <img src="https://images.unsplash.com/photo-1493256338651-d82f7acb2b38?w=500" alt="Wnętrze barber shopu">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="o-nas">
+                <div>
+                    <h2 style="text-align:left">Dlaczego My?</h2>
+                    <p><strong>15 lat doświadczenia.</strong> Nie jesteśmy sieciówką. Tu liczy się rzemiosło i indywidualne podejście.</p>
+                    <p><strong>Najlepsze kosmetyki.</strong> Pracujemy tylko na produktach American Crew, Reuzel, Uppercut Deluxe.</p
