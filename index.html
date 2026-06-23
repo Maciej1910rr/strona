@@ -7,24 +7,53 @@
     <meta name="description" content="Strony internetowe dla firm z Radomia. Projekt i wdrożenie w 5 dni od 990 zł. Zadzwoń lub napisz na WhatsApp.">
     <style>
         * {margin: 0; padding: 0; box-sizing: border-box;}
+        :root {
+            --neon-green: #25D366;
+            --neon-blue: #00f2ff;
+            --dark: #0a0a0a;
+            --dark-2: #121212;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #1a1a1a;
-            background: #fff;
+            color: #f1f1f1;
+            background: var(--dark);
+        }
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            object-fit: cover;
+            opacity: 0.15;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 20%, rgba(37, 211, 102, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 80%, rgba(0, 242, 255, 0.1) 0%, transparent 40%),
+                        var(--dark);
+            z-index: -1;
         }
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 2;
         }
         .header {
             padding: 15px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             position: sticky;
             top: 0;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(10,10,10,0.8);
+            backdrop-filter: blur(12px);
             z-index: 100;
         }
         .header .container {
@@ -35,6 +64,7 @@
         .logo {
             font-weight: 800;
             font-size: 1.2rem;
+            text-shadow: 0 0 10px var(--neon-green);
         }
         .header-cta {
             display: flex;
@@ -44,22 +74,22 @@
         .header-cta a {
             text-decoration: none;
             font-weight: 600;
-            color: #1a1a1a;
+            color: #f1f1f1;
         }
         .hero {
-            padding: 80px 0 60px;
+            padding: 100px 0 80px;
             text-align: center;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 15px;
             font-weight: 800;
             line-height: 1.2;
+            text-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
         }
         .hero p {
             font-size: 1.25rem;
-            color: #444;
+            color: #ccc;
             margin-bottom: 30px;
             max-width: 600px;
             margin-left: auto;
@@ -68,8 +98,8 @@
         .btn {
             display: inline-block;
             padding: 16px 32px;
-            background: #25D366;
-            color: white;
+            background: var(--neon-green);
+            color: #000;
             text-decoration: none;
             border-radius: 8px;
             font-weight: 700;
@@ -78,37 +108,45 @@
             transition: 0.2s;
             border: none;
             cursor: pointer;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
         }
-        .btn:hover {transform: scale(1.05);}
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(37, 211, 102, 0.7);
+        }
         .btn-secondary {
-            background: #1a1a1a;
-        }
-        .btn-outline {
             background: transparent;
-            border: 2px solid #1a1a1a;
-            color: #1a1a1a;
+            color: var(--neon-blue);
+            border: 2px solid var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+        }
+        .btn-secondary:hover {
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.6);
         }
         .trust-bar {
-            background: #1a1a1a;
+            background: rgba(18,18,18,0.8);
+            border-top: 1px solid rgba(37, 211, 102, 0.3);
+            border-bottom: 1px solid rgba(37, 211, 102, 0.3);
             color: white;
             padding: 20px 0;
             text-align: center;
             font-size: 0.95rem;
+            backdrop-filter: blur(10px);
         }
         .section {
-            padding: 70px 0;
+            padding: 80px 0;
         }
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             margin-bottom: 20px;
             font-weight: 700;
         }
         .section-subtitle {
             text-align: center;
             font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 50px;
+            color: #aaa;
+            margin-bottom: 60px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
@@ -121,7 +159,16 @@
         }
         .feature-box {
             text-align: center;
-            padding: 20px;
+            padding: 30px 20px;
+            background: rgba(18,18,18,0.6);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
+        }
+        .feature-box:hover {
+            border: 1px solid var(--neon-blue);
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.2);
+            transform: translateY(-5px);
         }
         .feature-box h3 {
             font-size: 1.3rem;
@@ -132,26 +179,29 @@
         }
         .portfolio {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
             margin-bottom: 30px;
         }
         .portfolio-item {
-            border: 1px solid #e5e5e5;
             border-radius: 12px;
             overflow: hidden;
             transition: 0.3s;
-            background: white;
+            background: var(--dark-2);
+            border: 1px solid rgba(255,255,255,0.1);
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
         .portfolio-item:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            border: 1px solid var(--neon-green);
+            box-shadow: 0 0 30px rgba(37, 211, 102, 0.3);
         }
         .portfolio-item img {
             width: 100%;
-            height: 220px;
+            height: 240px;
             object-fit: cover;
-            background: #f0f0f0;
         }
         .portfolio-content {
             padding: 25px;
@@ -161,48 +211,51 @@
             font-size: 1.4rem;
         }
         .portfolio-content p {
-            color: #555;
+            color: #bbb;
             font-size: 1rem;
             line-height: 1.7;
         }
         .portfolio-tag {
             display: inline-block;
-            background: #e8f5e9;
-            color: #25D366;
+            background: rgba(37, 211, 102, 0.15);
+            color: var(--neon-green);
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 10px;
+            border: 1px solid rgba(37, 211, 102, 0.3);
         }
         .pricing {
-            background: #f8f9fa;
+            background: rgba(0,0,0,0.3);
         }
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             max-width: 900px;
             margin: 0 auto;
         }
         .price-box {
-            background: white;
+            background: var(--dark-2);
             padding: 40px 30px;
             border-radius: 12px;
-            border: 2px solid #e5e5e5;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
         }
         .price-box.popular {
-            border-color: #25D366;
+            border: 2px solid var(--neon-green);
             position: relative;
             transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(37, 211, 102, 0.2);
         }
         .popular-badge {
             position: absolute;
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
-            background: #25D366;
-            color: white;
+            background: var(--neon-green);
+            color: #000;
             padding: 5px 15px;
             border-radius: 20px;
             font-size: 0.85rem;
@@ -212,6 +265,8 @@
             font-size: 3rem;
             font-weight: 800;
             margin: 15px 0;
+            color: var(--neon-green);
+            text-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
         }
         .price-box ul {
             list-style: none;
@@ -220,39 +275,29 @@
         }
         .price-box li {
             padding: 10px 0;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
         .price-box li:before {
             content: "✓ ";
-            color: #25D366;
+            color: var(--neon-green);
             font-weight: bold;
             margin-right: 8px;
         }
-        .faq {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .faq-item {
-            border-bottom: 1px solid #eee;
-            padding: 25px 0;
-        }
-        .faq-item h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+        .ads-section {
+            background: rgba(0, 242, 255, 0.05);
+            border-top: 1px solid rgba(0, 242, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 242, 255, 0.2);
         }
         .contact {
             text-align: center;
-            background: #1a1a1a;
-            color: white;
         }
-        .contact .section-title {color: white;}
         .contact-info {
             font-size: 1.3rem;
             margin: 25px 0;
             line-height: 1.8;
         }
         .contact-info a {
-            color: #25D366;
+            color: var(--neon-green);
             text-decoration: none;
             font-weight: 700;
         }
@@ -261,18 +306,23 @@
             padding: 40px 0;
             color: #666;
             font-size: 0.9rem;
-            background: #f8f9fa;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
         @media (max-width: 768px) {
-            .hero h1 {font-size: 2rem;}
+            .hero h1 {font-size: 2.2rem;}
             .hero p {font-size: 1.1rem;}
             .price-box.popular {transform: scale(1);}
-            .header-cta {font-size: 0.9rem;}
-            .section-title {font-size: 1.8rem;}
+            .section-title {font-size: 2rem;}
         }
     </style>
 </head>
 <body>
+
+    <!-- VIDEO BG -->
+    <video class="video-bg" autoplay muted loop playsinline>
+        <source src="https://assets.mixkit.co/videos/4456/4456-720.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
 
     <!-- HEADER -->
     <header class="header">
@@ -327,40 +377,41 @@
     </section>
 
     <!-- PORTFOLIO -->
-    <section class="section" id="realizacje" style="background: #f8f9fa;">
+    <section class="section" id="realizacje">
         <div class="container">
-            <h2 class="section-title">Tak może wyglądać Twoja strona ↓</h2>
+            <h2 class="section-title">Kliknij i zobacz dema ↓</h2>
             <p class="section-subtitle">Każda strona jest robiona pod konkretną firmę. Ma sprzedawać, nie tylko wyglądać.</p>
             <div class="portfolio">
-                <div class="portfolio-item">
-                    <img src="demo1.png" alt="Strona dla barbera">
+                <a href="demo-fryzjer.html" target="_blank" class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074" alt="Strona dla barbera">
                     <div class="portfolio-content">
                         <span class="portfolio-tag">Barber Shop</span>
-                        <h3>Barber Radom</h3>
-                        <p><b>Problem:</b> Klienci dzwonili non stop o wolne terminy. Właściciel nie miał czasu strzyc.<br><br>
-                        <b>Rozwiązanie:</b> Dodałem system rezerwacji online Booksy. <br><br>
-                        <b>Wynik:</b> 60% mniej telefonów. Więcej czasu na klientów.</p>
+                        <h3>Demo: Barber Radom</h3>
+                        <p><b>Problem:</b> Klienci dzwonili non stop o wolne terminy.<br><br>
+                        <b>Rozwiązanie:</b> System rezerwacji online Booksy.<br><br>
+                        <b>Wynik:</b> 60% mniej telefonów. Kliknij żeby zobaczyć.</p>
                     </div>
-                <div class="portfolio-item">
-                    <img src="demo2.png" alt="Strona dla pizzerii">
+                </a>
+                <a href="demo-kosmetyczka.html" target="_blank" class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?q=80&w=2069" alt="Strona dla kosmetyczki">
                     <div class="portfolio-content">
-                        <span class="portfolio-tag">Gastronomia</span>
-                        <h3>Pizzeria Centrum</h3>
-                        <p><b>Problem:</b> Menu w PDF na Facebooku. Nikt nie mógł znaleźć telefonu do zamówień.<br><br>
-                        <b>Rozwiązanie:</b> Menu na stronie + duży przycisk "Zadzwoń i zamów".<br><br>
-                        <b>Wynik:</b> +30% telefonów w pierwszym miesiącu.</p>
+                        <span class="portfolio-tag">Beauty</span>
+                        <h3>Demo: Salon Kosmetyczny</h3>
+                        <p><b>Problem:</b> Klientki nie wiedziały jaki jest cennik i wolne terminy.<br><br>
+                        <b>Rozwiązanie:</b> Cennik online + kalendarz zabiegów.<br><br>
+                        <b>Wynik:</b> +40% rezerwacji. Kliknij żeby zobaczyć.</p>
                     </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="demo3.png" alt="Strona dla mechanika">
+                </a>
+                <a href="demo-mechanik.html" target="_blank" class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=2074" alt="Strona dla mechanika">
                     <div class="portfolio-content">
                         <span class="portfolio-tag">Usługi</span>
-                        <h3>Auto Mechanik</h3>
-                        <p><b>Problem:</b> Niewidoczny w Google. Zero zapytań z internetu. Tylko poczta pantoflowa.<br><br>
+                        <h3>Demo: Auto Mechanik</h3>
+                        <p><b>Problem:</b> Niewidoczny w Google. Zero zapytań z internetu.<br><br>
                         <b>Rozwiązanie:</b> Prosta strona + optymalizacja wizytówki Google.<br><br>
-                        <b>Wynik:</b> 8 zapytań przez formularz w pierwszym tygodniu.</p>
+                        <b>Wynik:</b> 8 zapytań w 1. tydzień. Kliknij żeby zobaczyć.</p>
                     </div>
-                </div>
+                </a>
             </div>
             <div style="text-align: center;">
                 <a href="https://wa.me/48790524089?text=Chcę%20taką%20stronę%20za%20990zł" class="btn">CHCĘ TAKĄ STRONĘ ZA 990 ZŁ</a>
@@ -382,10 +433,9 @@
                         <li>Działa idealnie na telefonie</li>
                         <li>Formularz kontaktowy na maila</li>
                         <li>Wdrożenie w 5 dni roboczych</li>
-                        <li>Instrukcja jak edytować teksty</li>
                         <li>Domena + hosting na rok 250 zł</li>
                     </ul>
-                    <a href="https://wa.me/48790524089?text=Wybieram%20PAKIET%20START" class="btn btn-outline">Wybieram START</a>
+                    <a href="https://wa.me/48790524089?text=Wybieram%20PAKIET%20START" class="btn btn-secondary">Wybieram START</a>
                 </div>
                 <div class="price-box popular">
                     <div class="popular-badge">NAJCZĘŚCIEJ WYBIERANY</div>
@@ -396,8 +446,7 @@
                         <li>Rozbudowa do 6 podstron</li>
                         <li>Podpięcie Google Maps i opinii</li>
                         <li>Pomogę z tekstami na stronę</li>
-                        <li>Podstawowa optymalizacja SEO pod Radom</li>
-                        <li>Konfiguracja wizytówki Google</li>
+                        <li>Podstawowa optymalizacja SEO</li>
                         <li><b>Domena + hosting na rok GRATIS</b></li>
                     </ul>
                     <a href="https://wa.me/48790524089?text=Wybieram%20PAKIET%20FIRMA" class="btn">Wybieram FIRMA</a>
@@ -406,24 +455,12 @@
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Pytania które zawsze padają</h2>
-            <div class="faq">
-                <div class="faq-item">
-                    <h3>Co jak mi się nie spodoba?</h3>
-                    <p>Robię projekt graficzny. Jak Ci się nie spodoba, to kończymy współpracę i nie płacisz nic. Zero ryzyka. Płacisz 50% zaliczki dopiero jak zaakceptujesz wygląd.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Czy będę mógł sam coś zmienić na stronie?</h3>
-                    <p>Tak. Dostajesz prostą instrukcję wideo jak zmieniać teksty i zdjęcia. Jak nie chcesz się w to bawić, to małe zmiany robię za darmo przez pierwszy rok.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Co z hostingiem i domeną po roku?</h3>
-                    <p>W pakiecie FIRMA masz pierwszy rok gratis. Potem to koszt 250 zł netto na rok za wszystko. Płacisz raz i masz spokój. Mogę też przepiąć stronę na Twój hosting.</p>
-                </div>
-            </div>
+    <!-- REKLAMY -->
+    <section class="section ads-section">
+        <div class="container" style="text-align: center; max-width: 800px;">
+            <h2 class="section-title">Masz biznes w Radomiu?</h2>
+            <p class="section-subtitle">Kup miejsce na baner reklamowy na moich stronach demonstracyjnych. Trafiasz bezpośrednio do właścicieli firm którzy szukają strony. 100+ wyświetleń miesięcznie.</p>
+            <a href="https://wa.me/48790524089?text=Chcę%20kupić%20reklamę%20na%20stronie" class="btn">Zapytaj o reklamę na WhatsApp</a>
         </div>
     </section>
 
@@ -431,7 +468,7 @@
     <section class="section contact" id="kontakt">
         <div class="container">
             <h2 class="section-title">Dobra, gadamy?</h2>
-            <p class="section-subtitle" style="color: #ccc;">Odpisuję w 15 min, 7 dni w tygodniu od 8:00 do 21:00</p>
+            <p class="section-subtitle" style="color: #aaa;">Odpisuję w 15 min, 7 dni w tygodniu od 8:00 do 21:00</p>
             <div class="contact-info">
                 <a href="https://wa.me/48790524089?text=Cześć,%20chcę%20wycenę%20strony" class="btn">Napisz na WhatsApp: 790 524 089</a>
             </div>
