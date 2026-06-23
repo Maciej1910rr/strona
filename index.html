@@ -67,9 +67,19 @@
             background: #f9f9f9;
             border: 1px solid #ddd;
             width: 300px;
-            padding: 15px;
             text-align: center;
             border-radius: 5px;
+            transition: 0.2s;
+        }
+        .demo:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+        }
+        .demo a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: #333;
         }
         .demo img {
             width: 100%;
@@ -133,19 +143,25 @@
             <h2>Tak wyglądają strony które robię</h2>
             <div class="dema">
                 <div class="demo">
-                    <img src="demo1.png" alt="Demo 1">
-                    <h3>Barber Shop</h3>
-                    <p>Strona wizytówka + rezerwacje online. Koniec z telefonami o terminy.</p>
+                    <a href="demo-fryzjer.html" target="_blank">
+                        <img src="demo1.png" alt="Demo Fryzjer">
+                        <h3>Barber Shop</h3>
+                        <p>Strona wizytówka + rezerwacje online. Koniec z telefonami o terminy.</p>
+                    </a>
                 </div>
                 <div class="demo">
-                    <img src="demo2.png" alt="Demo 2">
-                    <h3>Pizzeria</h3>
-                    <p>Menu na stronie + zamawianie jednym kliknięciem. +30% więcej telefonów.</p>
+                    <a href="demo-kosmetyczka.html" target="_blank">
+                        <img src="demo2.png" alt="Demo Kosmetyczka">
+                        <h3>Salon Kosmetyczny</h3>
+                        <p>Oferta zabiegów + cennik + rezerwacje. Klientki umawiają się same.</p>
+                    </a>
                 </div>
                 <div class="demo">
-                    <img src="demo3.png" alt="Demo 3">
-                    <h3>Auto Mechanik</h3>
-                    <p>Oferta + mapa dojazdu + opinie Google. 8 zapytań w pierwszy tydzień.</p>
+                    <a href="demo-mechanik.html" target="_blank">
+                        <img src="demo3.png" alt="Demo Auto Mechanik">
+                        <h3>Auto Mechanik</h3>
+                        <p>Oferta + mapa dojazdu + opinie Google. 8 zapytań w pierwszy tydzień.</p>
+                    </a>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 20px;">
