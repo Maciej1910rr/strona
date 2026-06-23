@@ -3,391 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maciej - Strony WWW Radom | Matrix Design 999zł</title>
-    <meta name="description" content="Wejście do Matrixa dla Twojej firmy w Radomiu. Szybkie strony WWW dla fryzjerów, mechaników, kosmetyczek. Demo w 48h od 999zł. Tel 576.348.632">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JPYHBE4E5F"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-JPYHBE4E5F');
-    </script>
-    
+    <title>Strony WWW Radom - Maciej | Projekt w 5 dni od 990 zł</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-        
-        * {margin:0;padding:0;box-sizing:border-box}
-        
+        * {margin: 0; padding: 0; box-sizing: border-box;}
         body {
-            background:#000;
-            color:#0f0;
-            font-family:'Share Tech Mono',monospace;
-            overflow-x:hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fff;
         }
-        
-        #matrix-canvas {
-            position:fixed;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-            z-index:0;
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        
-        .content {
-            position:relative;
-            z-index:1;
-            max-width:1200px;
-            margin:0 auto;
-            padding:20px;
+        .hero {
+            padding: 60px 0 40px;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
-        
-        header {
-            text-align:center;
-            padding:60px 20px;
-            background:rgba(0,0,0,.8);
-            border:2px solid #0f0;
-            margin:20px 0;
-            box-shadow:0 0 30px #0f0;
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            line-height: 1.2;
         }
-        
-        .glitch {
-            font-size:3.5rem;
-            font-weight:700;
-            text-transform:uppercase;
-            text-shadow:0 0 10px #0f0,0 0 20px #0f0,0 0 30px #0f0;
-            animation:glitch 1s infinite;
+        .hero p {
+            font-size: 1.25rem;
+            color: #444;
+            margin-bottom: 30px;
         }
-        
-        @keyframes glitch {
-            0%,100%{text-shadow:0 0 10px #0f0,0 0 20px #0f0}
-            50%{text-shadow:-2px 0 #f00,2px 0 #00f,0 0 30px #0f0}
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 5px;
+            transition: 0.2s;
         }
-        
-        .typing {
-            font-size:1.3rem;
-            margin:20px 0;
-            color:#0a0;
-            min-height:30px;
+        .btn:hover {transform: scale(1.05);}
+        .btn-secondary {
+            background: #1a1a1a;
         }
-        
-        .terminal {
-            background:rgba(0,20,0,.9);
-            border:1px solid #0f0;
-            padding:30px;
-            margin:30px 0;
-            font-size:1.1rem;
-            line-height:1.8;
-            box-shadow:inset 0 0 20px rgba(0,255,0,.2);
+        .section {
+            padding: 60px 0;
         }
-        
-        .terminal::before {
-            content:"> ";
-            color:#0f0;
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            font-weight: 700;
         }
-        
-        .blink {
-            animation:blink 1s infinite;
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
         }
-        
-        @keyframes blink {
-            0%,50%{opacity:1}
-            51%,100%{opacity:0}
+        .portfolio-item {
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
         }
-        
+        .portfolio-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f0f0f0;
+        }
+        .portfolio-content {
+            padding: 20px;
+        }
+        .portfolio-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        .portfolio-content p {
+            color: #666;
+            font-size: 0.95rem;
+        }
         .pricing {
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-            gap:30px;
-            margin:40px 0;
+            background: #f8f9fa;
         }
-        
-        .plan {
-            background:rgba(0,20,0,.9);
-            border:2px solid #0f0;
-            padding:30px;
-            text-align:center;
-            transition:.3s;
-            position:relative;
-            overflow:hidden;
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
         }
-        
-        .plan:hover {
-            transform:scale(1.05);
-            box-shadow:0 0 40px #0f0;
-            background:rgba(0,40,0,.9);
+        .price-box {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 12px;
+            border: 2px solid #e5e5e5;
         }
-        
-        .plan h3 {
-            font-size:2rem;
-            color:#0f0;
-            margin-bottom:20px;
-            text-shadow:0 0 15px #0f0;
+        .price-box.popular {
+            border-color: #25D366;
+            position: relative;
         }
-        
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #25D366;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
         .price {
-            font-size:3rem;
-            color:#ff0;
-            text-shadow:0 0 20px #ff0;
-            margin:20px 0;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 15px 0;
         }
-        
-        .plan ul {
-            list-style:none;
-            text-align:left;
-            margin:20px 0;
-            color:#0a0;
+        .price-box ul {
+            list-style: none;
+            margin: 25px 0;
         }
-        
-        .plan ul li::before {
-            content:"[✓] ";
-            color:#0f0;
+        .price-box li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
         }
-        
-        .cta {
-            display:inline-block;
-            background:#0f0;
-            color:#000;
-            padding:15px 40px;
-            text-decoration:none;
-            font-weight:700;
-            font-size:1.2rem;
-            margin:20px 0;
-            transition:.3s;
-            text-transform:uppercase;
-            box-shadow:0 0 20px #0f0;
+        .price-box li:before {
+            content: "✓ ";
+            color: #25D366;
+            font-weight: bold;
+            margin-right: 8px;
         }
-        
-        .cta:hover {
-            background:#ff0;
-            box-shadow:0 0 40px #ff0;
-            transform:scale(1.1);
-        }
-        
-        .demos {
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:20px;
-            margin:40px 0;
-        }
-        
-        .demo-card {
-            background:rgba(0,20,0,.8);
-            border:1px solid #0f0;
-            padding:20px;
-            text-align:center;
-            transition:.3s;
-        }
-        
-        .demo-card:hover {
-            background:rgba(0,40,0,.9);
-            box-shadow:0 0 30px #0f0;
-        }
-        
-        .demo-card h4 {
-            color:#0f0;
-            font-size:1.5rem;
-            margin-bottom:15px;
-        }
-        
-        footer {
-            text-align:center;
-            padding:40px 20px;
-            background:rgba(0,0,0,.9);
-            border-top:2px solid #0f0;
-            margin-top:60px;
-        }
-        
         .contact {
-            font-size:1.3rem;
-            color:#0f0;
-            margin:10px 0;
+            text-align: center;
+            background: #1a1a1a;
+            color: white;
         }
-        
-        .availability {
-            color:#ff0;
-            font-size:1rem;
-            margin:20px 0;
-            padding:15px;
-            border:1px dashed #ff0;
-            background:rgba(50,50,0,.3);
+        .contact .section-title {color: white;}
+        .contact-info {
+            font-size: 1.3rem;
+            margin: 20px 0;
         }
-        
-        @media (max-width:768px) {
-            .glitch{font-size:2rem}
-            .pricing{grid-template-columns:1fr}
+        .contact-info a {
+            color: #25D366;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {font-size: 1.8rem;}
+            .hero p {font-size: 1.1rem;}
         }
     </style>
 </head>
 <body>
-    <canvas id="matrix-canvas"></canvas>
-    
-    <div class="content">
-        <header>
-            <h1 class="glitch">WEJŚCIE DO MATRIXA</h1>
-            <div class="typing" id="typing"></div>
-            <p style="color:#0a0;font-size:1.2rem;margin-top:20px;">DLA TWOJEJ FIRMY W RADOMIU</p>
-        </header>
-        
-        <div class="terminal">
-            > Inicjalizacja systemu...<br>
-            > Łączenie z serwerem RADOM_MAINFRAME...<br>
-            > Status: ONLINE<br>
-            > Ładowanie modułu: STRONA_WWW.exe<br>
-            > Gotowy do transmisji danych<span class="blink">_</span>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Strony WWW dla firm z Radomia<br>które dowożą klientów z Google</h1>
+            <p>Projekt + wdrożenie w 5 dni. Prosto, na temat, od 990 zł.</p>
+            <a href="https://wa.me/48790524089?text=Cześć,%20chcę%20wycenę%20strony" class="btn">CHCĘ DARMOWĄ WYCENĘ NA WHATSAPP</a>
+            <a href="#portfolio" class="btn btn-secondary">Zobacz jak to wygląda</a>
         </div>
-        
-        <section>
-            <h2 style="text-align:center;font-size:2.5rem;margin:40px 0;text-shadow:0 0 20px #0f0;">> WYBIERZ SWÓJ PAKIET</h2>
-            
-            <div class="pricing">
-                <div class="plan">
-                    <h3>[BASIC]</h3>
-                    <div class="price">999 PLN</div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Tak może wyglądać Twoja strona ↓</h2>
+            <div class="portfolio">
+                <div class="portfolio-item">
+                    <img src="demo1.png" alt="Strona dla barbera">
+                    <div class="portfolio-content">
+                        <h3>Barber Shop Radom</h3>
+                        <p><b>Problem:</b> Klienci dzwonili o wolne terminy.<br>
+                        <b>Rozwiązanie:</b> Dodałem rezerwacje online. 60% mniej telefonów.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="demo2.png" alt="Strona dla pizzerii">
+                    <div class="portfolio-content">
+                        <h3>Pizzeria Centrum</h3>
+                        <p><b>Problem:</b> Menu w PDF, nikt nie mógł znaleźć telefonu.<br>
+                        <b>Rozwiązanie:</b> Menu na stronie + zamawianie 1 klik. +30% telefonów.</p>
+                    </div>
+                <div class="portfolio-item">
+                    <img src="demo3.png" alt="Strona dla mechanika">
+                    <div class="portfolio-content">
+                        <h3>Auto Mechanik</h3>
+                        <p><b>Problem:</b> Niewidoczny w Google, 0 zapytań.<br>
+                        <b>Rozwiązanie:</b> Strona + wizytówka Google. 8 zapytań w 1. tydzień.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="https://wa.me/48790524089?text=Chcę%20taką%20stronę%20za%20990zł" class="btn">PODOBA CI SIĘ? CHCĘ TAKĄ ZA 990 ZŁ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CENNIK -->
+    <section class="section pricing">
+        <div class="container">
+            <h2 class="section-title">Ile to kosztuje? Prosto i bez gwiazdek</h2>
+            <div class="pricing-grid">
+                <div class="price-box">
+                    <h3>PAKIET START</h3>
+                    <div class="price">990 zł</div>
                     <ul>
-                        <li>Strona wizytówka 1-page</li>
-                        <li>Design Matrix/Terminal</li>
-                        <li>Responsywna (telefon/PC)</li>
+                        <li>Strona wizytówka do 3 podstron</li>
+                        <li>Działa na telefonie</li>
                         <li>Formularz kontaktowy</li>
-                        <li>Podpięcie domeny</li>
-                        <li>Realizacja 48h</li>
-                        <li>1 poprawka gratis</li>
+                        <li>Wdrożenie w 5 dni</li>
+                        <li>Domena + hosting na rok 250 zł</li>
                     </ul>
-                    <a href="tel::+4857*3486*2" class="cta">> ZAMÓW</a>
+                    <a href="https://wa.me/48790524089?text=Wybieram%20PAKIET%20START" class="btn">Wybieram START</a>
                 </div>
-                
-                <div class="plan" style="border-color:#ff0;box-shadow:0 0 40px #ff0;">
-                    <h3 style="color:#ff0;">[PRO]</h3>
-                    <div class="price">1999 PLN</div>
+                <div class="price-box popular">
+                    <div class="popular-badge">NAJCZĘŚCIEJ WYBIERANY</div>
+                    <h3>PAKIET FIRMA</h3>
+                    <div class="price">1790 zł</div>
                     <ul>
-                        <li>Strona firmowa 5 podstron</li>
-                        <li>Design Matrix Premium</li>
-                        <li>Animacje + efekty</li>
-                        <li>Galeria/Cennik/Blog</li>
-                        <li>SEO + Google Moja Firma</li>
-                        <li>Realizacja 5 dni</li>
-                        <li>3 poprawki gratis</li>
-                        <li>Wsparcie 30 dni</li>
+                        <li><b>Wszystko ze START +</b></li>
+                        <li>Do 6 podstron</li>
+                        <li>Podpięcie Google Maps i opinii</li>
+                        <li>Pomogę z tekstami na stronę</li>
+                        <li>Podstawowa optymalizacja SEO</li>
+                        <li>Domena + hosting na rok GRATIS</li>
                     </ul>
-                    <a href="tel:+4857*3486*2" class="cta">> ZAMÓW</a>
-                </div>
-                
-                <div class="plan">
-                    <h3>[ELITE]</h3>
-                    <div class="price">2999 PLN</div>
-                    <ul>
-                        <li>Strona premium 10+ podstron</li>
-                        <li>Custom Matrix Design</li>
-                        <li>Sklep internetowy/Syst. rezerwacji</li>
-                        <li>Panel admina</li>
-                        <li>Integracje API</li>
-                        <li>Realizacja 10 dni</li>
-                        <li>Nielimitowane poprawki</li>
-                        <li>Wsparcie 90 dni</li>
-                    </ul>
-                    <a href="tel::+4857*3486*2" class="cta">> ZAMÓW</a>
+                    <a href="https://wa.me/48790524089?text=Wybieram%20PAKIET%20FIRMA" class="btn">Wybieram FIRMA</a>
                 </div>
             </div>
-        </section>
-        
-        <section>
-            <h2 style="text-align:center;font-size:2.5rem;margin:40px 0;text-shadow:0 0 20px #0f0;">> ZOBACZ DEMO LIVE</h2>
-            
-            <div class="demos">
-                <div class="demo-card">
-                    <h4>DEMO: FRYZJER</h4>
-                    <p style="color:#0a0;margin:15px 0;">Barber Shop Radom</p>
-                    <a href="demo-fryzjer.html" class="cta" style="font-size:1rem;padding:10px 20px;">> WEJDŹ</a>
-                </div>
-                
-                <div class="demo-card">
-                    <h4>DEMO: MECHANIK</h4>
-                    <p style="color:#0a0;margin:15px 0;">Auto Serwis 24/7</p>
-                    <a href="demo-mechanik.html" class="cta" style="font-size:1rem;padding:10px 20px;">> WEJDŹ</a>
-                </div>
-                
-                <div class="demo-card">
-                    <h4>DEMO: KOSMETYCZKA</h4>
-                    <p style="color:#0a0;margin:15px 0;">Salon Urody Matrix</p>
-                    <a href="demo-kosmetyczka.html" class="cta" style="font-size:1rem;padding:10px 20px;">> WEJDŹ</a>
-                </div>
-            </div>
-        </section>
-        
-        <div class="terminal" style="text-align:center;">
-            > System płatności: BLIK / PRZELEW / CRYPTO<br>
-            > Status projektu: GOTOWY DO WDROŻENIA<br>
-            > Czas realizacji: 48H OD WPŁATY<br>
-            > Gwarancja: 100% SATYSFAKCJI LUB ZWROT<span class="blink">_</span>
-        </div>
-        
-        <!-- OFERTA REKLAMOWA DLA FIRM -->
-        <section id="reklama" style="background:rgba(0,20,0,.6);border:2px solid #0f0;margin:40px 0;border-radius:10px;padding:40px;text-align:center;">
-            <h2 style="color:#0f0;text-shadow:0 0 20px #0f0;font-size:2.2rem;">>> REKLAMA DLA FIRM <<</h2>
-            <div style="color:#0a0;font-size:1.1rem;margin:20px 0;line-height:1.8;">
-                <p>> DOCIERASZ DO 1000+ WŁAŚCICIELI FIRM Z RADOMIA MIESIĘCZNIE</p>
-                <p>> FRYZJERZY | MECHANICY | KOSMETYCZKI | BUDOWLAŃCY</p>
-                <p>> 100% RUCH Z RADOMIA | KLIENCI SZUKAJĄCY USŁUG WWW</p>
-            </div>
-            <div style="background:rgba(0,0,0,.8);border:1px solid #ff0;padding:30px;margin:20px auto;max-width:600px;">
-                <h3 style="color:#ff0;font-size:1.8rem;">PAKIET BANER PREMIUM</h3>
-                <p style="color:#ff0;font-size:2.5rem;margin:15px 0;text-shadow:0 0 20px #ff0;">300 PLN / MIESIĄC</p>
-                <ul style="text-align:left;color:#0a0;list-style:none;line-height:2;">
-                    <li>[✓] Baner 1000x200px na górze strony głównej</li>
-                    <li>[✓] Link do Twojej strony / numer telefonu</li>
-                    <li>[✓] Gwarancja min. 1000 wyświetleń/mc</li>
-                    <li>[✓] Raport z Google Analytics co miesiąc</li>
-                    <li>[✓] Tylko 1 miejsce - na wyłączność dla branży</li>
-                </ul>
-            </div>
-            <a href="tel::+4857*3486*2" class="cta" style="background:#ff0;box-shadow:0 0 30px #ff0;">> ZAREZERWUJ: 576.348.632</a>
-            <p style="color:#ff0;margin-top:20px;font-size:1.1rem;">> Zostało: 1 miejsce | Decyduje kolejność zgłoszeń</p>
-        </section>
-        
-        <footer>
-            <div class="contact">> KONTAKT: MACIEJ</div>
-            <div class="contact">> TEL: 576.348.632</div>
-            <div class="contact">> EMAIL: maciej1910rr@proton.me</div>
-            
-            <div class="availability">
-                > DOSTĘPNOŚĆ:<br>
-                PON-PT: 16:00 - 22:00<br>
-                SOB-NIE: 10:00 - 20:00<br>
-                > ODPOWIEDŹ W 2H
-            </div>
-            
-            <p style="color:#0a0;margin-top:30px;">
-                > © 2026 MACIEJ MATRIX SYSTEMS | RADOM<br>
-                > Wszystkie prawa zastrzeżone | Built in the Matrix
+            <p style="text-align: center; margin-top: 30px; color: #666;">
+                <b>Płacisz 50% po akceptacji projektu. Resztę jak strona jest online.<br>Nie spodoba Ci się projekt = nie płacisz nic.</b>
             </p>
-        </footer>
-    </div>
-    
-    <script>
-        // Matrix Rain Effect
-        const canvas = document.getElementById('matrix-canvas');
-        const ctx = canvas.getContext('2d');
-        
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;n
-        
-        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-        const charArray = chars.split('');
-        const fontSize = 14;
-        const columns = canvas.width / fontSize;
-        const drops = Array(Math.floor(columns)).fill(1);
-        
-        function draw() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
-            ctx.fillStyle = '#0f0';
-            ctx.font = fontSize + 'px monospace';
-            
-            for (let i = 0; i < drops.length; i++) {
-                const text = charArray[Math.floor(Math.random() * charArray.length)];
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                
-                if (drops[i] * fontSize > canvas.height && Math.random
+        </div>
+    </section>
+
+    <!-- DLACZEGO JA -->
+    <section class="section">
+        <div class="container" style="max-width: 700px; text-align: center;">
+            <h2 class="section-title">Dlaczego ja, a nie agencja za 8 koła?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 15px;"><b>1. Gadamy po ludzku.</b> Bez IT-bełkotu. Wiesz co dostajesz.</p>
+            <p style="font-size: 1.1rem; margin-bottom: 15px;"><b>2. Jestem z Radomia.</b> Wiesz do kogo dzwonisz. Nie znikam po kasie.</p>
+            <p style="font-size: 1.1rem;"><b>3. Robię w 5 dni.</b> Nie czekasz 2 miesiące na stronę.</p>
+        </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section class="section contact">
+        <div class="container">
+            <h2 class="section-title">Gadamy?</h2>
+            <div class="contact-info">
+                WhatsApp: <a href="https://wa.me/48790524089?text=Cześć,%20chcę%20wycenę%20strony">790 524 089</a><br>
+                Kliknij i napisz "WYCENA". Odpisuję w 15 min, 7 dni w tyg.
+            </div>
+            <div class="contact-info">
+                Lub DM: <a href="https://instagram.com/maciej_1910rr" target="_blank">IG @maciej_1910rr</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Maciej | Strony WWW Radom | 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>
