@@ -10,6 +10,7 @@
         :root {
             --neon-green: #25D366;
             --neon-blue: #00f2ff;
+            --neon-purple: #b026ff;
             --dark: #0a0a0a;
             --dark-2: #121212;
         }
@@ -27,7 +28,7 @@
             height: 100%;
             z-index: -2;
             object-fit: cover;
-            opacity: 0.15;
+            opacity: 0.12;
         }
         .overlay {
             position: fixed;
@@ -36,7 +37,7 @@
             width: 100%;
             height: 100%;
             background: radial-gradient(circle at 20% 20%, rgba(37, 211, 102, 0.15) 0%, transparent 40%),
-                        radial-gradient(circle at 80% 80%, rgba(0, 242, 255, 0.1) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 80%, rgba(176, 38, 255, 0.1) 0%, transparent 40%),
                         var(--dark);
             z-index: -1;
         }
@@ -49,10 +50,10 @@
         }
         .header {
             padding: 15px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(37, 211, 102, 0.2);
             position: sticky;
             top: 0;
-            background: rgba(10,10,10,0.8);
+            background: rgba(10,10,10,0.85);
             backdrop-filter: blur(12px);
             z-index: 100;
         }
@@ -189,19 +190,38 @@
             transition: 0.3s;
             background: var(--dark-2);
             border: 1px solid rgba(255,255,255,0.1);
-            text-decoration: none;
-            color: inherit;
-            display: block;
+            position: relative;
         }
         .portfolio-item:hover {
             transform: translateY(-8px);
             border: 1px solid var(--neon-green);
             box-shadow: 0 0 30px rgba(37, 211, 102, 0.3);
         }
+        .portfolio-img-wrap {
+            position: relative;
+            cursor: pointer;
+        }
         .portfolio-item img {
             width: 100%;
             height: 240px;
             object-fit: cover;
+            display: block;
+        }
+        .portfolio-img-wrap::after {
+            content: "🔍 Powiększ";
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            opacity: 0;
+            transition: 0.2s;
+        }
+        .portfolio-img-wrap:hover::after {
+            opacity: 1;
         }
         .portfolio-content {
             padding: 25px;
@@ -214,6 +234,7 @@
             color: #bbb;
             font-size: 1rem;
             line-height: 1.7;
+            margin-bottom: 20px;
         }
         .portfolio-tag {
             display: inline-block;
@@ -225,6 +246,35 @@
             font-weight: 600;
             margin-bottom: 10px;
             border: 1px solid rgba(37, 211, 102, 0.3);
+        }
+        .portfolio-links {
+            display: flex;
+            gap: 10px;
+        }
+        .portfolio-links a {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+        .link-demo {
+            background: var(--neon-green);
+            color: #000;
+        }
+        .link-demo:hover {
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
+        }
+        .link-wa {
+            background: transparent;
+            border: 1px solid var(--neon-blue);
+            color: var(--neon-blue);
+        }
+        .link-wa:hover {
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
         }
         .pricing {
             background: rgba(0,0,0,0.3);
@@ -242,6 +292,11 @@
             border-radius: 12px;
             border: 1px solid rgba(255,255,255,0.1);
             text-align: center;
+            transition: 0.3s;
+        }
+        .price-box:hover {
+            border: 1px solid var(--neon-purple);
+            box-shadow: 0 0 30px rgba(176, 38, 255, 0.2);
         }
         .price-box.popular {
             border: 2px solid var(--neon-green);
@@ -284,9 +339,9 @@
             margin-right: 8px;
         }
         .ads-section {
-            background: rgba(0, 242, 255, 0.05);
-            border-top: 1px solid rgba(0, 242, 255, 0.2);
-            border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+            background: rgba(176, 38, 255, 0.05);
+            border-top: 1px solid rgba(176, 38, 255, 0.3);
+            border-bottom: 1px solid rgba(176, 38, 255, 0.3);
         }
         .contact {
             text-align: center;
@@ -308,11 +363,44 @@
             font-size: 0.9rem;
             border-top: 1px solid rgba(255,255,255,0.1);
         }
+        /* LIGHTBOX */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 2px solid var(--neon-green);
+            box-shadow: 0 0 40px rgba(37, 211, 102, 0.5);
+            border-radius: 8px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            font-weight: 300;
+        }
         @media (max-width: 768px) {
             .hero h1 {font-size: 2.2rem;}
             .hero p {font-size: 1.1rem;}
             .price-box.popular {transform: scale(1);}
             .section-title {font-size: 2rem;}
+            .portfolio-links {flex-direction: column;}
         }
     </style>
 </head>
@@ -329,8 +417,8 @@
         <div class="container">
             <div class="logo">Maciej | Strony Radom</div>
             <div class="header-cta">
-                <a href="tel:+48790524089">790 524 089</a>
-                <a href="https://wa.me/48790524089?text=Cześć,%20chcę%20wycenę%20strony" class="btn" style="padding: 10px 20px; font-size: 0.95rem;">WhatsApp</a>
+                <a href="tel:+48576348632">576 348 632</a>
+                <a href="https://wa.me/48576348632?text=Cześć,%20chcę%20wycenę%20strony" class="btn" style="padding: 10px 20px; font-size: 0.95rem;">WhatsApp</a>
             </div>
         </div>
     </header>
@@ -340,7 +428,7 @@
         <div class="container">
             <h1>Strony WWW dla firm z Radomia<br>które dowożą klientów z Google</h1>
             <p>Projekt + wdrożenie w 5 dni. Bez IT-bełkotu. Prosto, na temat, od 990 zł netto.</p>
-            <a href="https://wa.me/48790524089?text=Cześć,%20chcę%20darmową%20wycenę%20strony" class="btn">CHCĘ DARMOWĄ WYCENĘ NA WHATSAPP</a>
+            <a href="https://wa.me/48576348632?text=Cześć,%20chcę%20darmową%20wycenę%20strony" class="btn">CHCĘ DARMOWĄ WYCENĘ NA WHATSAPP</a>
             <a href="#realizacje" class="btn btn-secondary">Zobacz realizacje</a>
         </div>
     </section>
@@ -382,39 +470,57 @@
             <h2 class="section-title">Kliknij i zobacz dema ↓</h2>
             <p class="section-subtitle">Każda strona jest robiona pod konkretną firmę. Ma sprzedawać, nie tylko wyglądać.</p>
             <div class="portfolio">
-                <a href="demo-fryzjer.html" target="_blank" class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074" alt="Strona dla barbera">
+                <div class="portfolio-item">
+                    <div class="portfolio-img-wrap" onclick="openLightbox('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074')">
+                        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074" alt="Strona dla barbera">
+                    </div>
                     <div class="portfolio-content">
                         <span class="portfolio-tag">Barber Shop</span>
                         <h3>Demo: Barber Radom</h3>
                         <p><b>Problem:</b> Klienci dzwonili non stop o wolne terminy.<br><br>
                         <b>Rozwiązanie:</b> System rezerwacji online Booksy.<br><br>
-                        <b>Wynik:</b> 60% mniej telefonów. Kliknij żeby zobaczyć.</p>
+                        <b>Wynik:</b> 60% mniej telefonów.</p>
+                        <div class="portfolio-links">
+                            <a href="demo-fryzjer.html" target="_blank" class="link-demo">Zobacz Demo</a>
+                            <a href="https://wa.me/48576348632?text=Chcę%20stronę%20jak%20dla%20barbera" class="link-wa">Chcę taką</a>
+                        </div>
                     </div>
-                </a>
-                <a href="demo-kosmetyczka.html" target="_blank" class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?q=80&w=2069" alt="Strona dla kosmetyczki">
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img-wrap" onclick="openLightbox('https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?q=80&w=2069')">
+                        <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?q=80&w=2069" alt="Strona dla kosmetyczki">
+                    </div>
                     <div class="portfolio-content">
                         <span class="portfolio-tag">Beauty</span>
                         <h3>Demo: Salon Kosmetyczny</h3>
                         <p><b>Problem:</b> Klientki nie wiedziały jaki jest cennik i wolne terminy.<br><br>
                         <b>Rozwiązanie:</b> Cennik online + kalendarz zabiegów.<br><br>
-                        <b>Wynik:</b> +40% rezerwacji. Kliknij żeby zobaczyć.</p>
+                        <b>Wynik:</b> +40% rezerwacji.</p>
+                        <div class="portfolio-links">
+                            <a href="demo-kosmetyczka.html" target="_blank" class="link-demo">Zobacz Demo</a>
+                            <a href="https://wa.me/48576348632?text=Chcę%20stronę%20jak%20dla%20kosmetyczki" class="link-wa">Chcę taką</a>
+                        </div>
                     </div>
-                </a>
-                <a href="demo-mechanik.html" target="_blank" class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=2074" alt="Strona dla mechanika">
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img-wrap" onclick="openLightbox('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=2074')">
+                        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=2074" alt="Strona dla mechanika">
+                    </div>
                     <div class="portfolio-content">
                         <span class="portfolio-tag">Usługi</span>
                         <h3>Demo: Auto Mechanik</h3>
                         <p><b>Problem:</b> Niewidoczny w Google. Zero zapytań z internetu.<br><br>
                         <b>Rozwiązanie:</b> Prosta strona + optymalizacja wizytówki Google.<br><br>
-                        <b>Wynik:</b> 8 zapytań w 1. tydzień. Kliknij żeby zobaczyć.</p>
+                        <b>Wynik:</b> 8 zapytań w 1. tydzień.</p>
+                        <div class="portfolio-links">
+                            <a href="demo-mechanik.html" target="_blank" class="link-demo">Zobacz Demo</a>
+                            <a href="https://wa.me/48576348632?text=Chcę%20stronę%20jak%20dla%20mechanika" class="link-wa">Chcę taką</a>
+                        </div>
                     </div>
-                </a>
+                </div>
             </div>
             <div style="text-align: center;">
-                <a href="https://wa.me/48790524089?text=Chcę%20taką%20stronę%20za%20990zł" class="btn">CHCĘ TAKĄ STRONĘ ZA 990 ZŁ</a>
+                <a href="https://wa.me/48576348632?text=Chcę%20taką%20stronę%20za%20990zł" class="btn">CHCĘ TAKĄ STRONĘ ZA 990 ZŁ</a>
             </div>
         </div>
     </section>
@@ -435,7 +541,7 @@
                         <li>Wdrożenie w 5 dni roboczych</li>
                         <li>Domena + hosting na rok 250 zł</li>
                     </ul>
-                    <a href="https://wa.me/48790524089?text=Wybieram%20PAKIET%20START" class="btn btn-secondary">Wybieram START</a>
+                    <a href="https://wa.me/48576348632?text=Wybieram%20PAKIET%20START" class="btn btn-secondary">Wybieram START</a>
                 </div>
                 <div class="price-box popular">
                     <div class="popular-badge">NAJCZĘŚCIEJ WYBIERANY</div>
@@ -444,47 +550,4 @@
                     <ul>
                         <li><b>Wszystko ze START +</b></li>
                         <li>Rozbudowa do 6 podstron</li>
-                        <li>Podpięcie Google Maps i opinii</li>
-                        <li>Pomogę z tekstami na stronę</li>
-                        <li>Podstawowa optymalizacja SEO</li>
-                        <li><b>Domena + hosting na rok GRATIS</b></li>
-                    </ul>
-                    <a href="https://wa.me/48790524089?text=Wybieram%20PAKIET%20FIRMA" class="btn">Wybieram FIRMA</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- REKLAMY -->
-    <section class="section ads-section">
-        <div class="container" style="text-align: center; max-width: 800px;">
-            <h2 class="section-title">Masz biznes w Radomiu?</h2>
-            <p class="section-subtitle">Kup miejsce na baner reklamowy na moich stronach demonstracyjnych. Trafiasz bezpośrednio do właścicieli firm którzy szukają strony. 100+ wyświetleń miesięcznie.</p>
-            <a href="https://wa.me/48790524089?text=Chcę%20kupić%20reklamę%20na%20stronie" class="btn">Zapytaj o reklamę na WhatsApp</a>
-        </div>
-    </section>
-
-    <!-- KONTAKT -->
-    <section class="section contact" id="kontakt">
-        <div class="container">
-            <h2 class="section-title">Dobra, gadamy?</h2>
-            <p class="section-subtitle" style="color: #aaa;">Odpisuję w 15 min, 7 dni w tygodniu od 8:00 do 21:00</p>
-            <div class="contact-info">
-                <a href="https://wa.me/48790524089?text=Cześć,%20chcę%20wycenę%20strony" class="btn">Napisz na WhatsApp: 790 524 089</a>
-            </div>
-            <div class="contact-info">
-                lub zadzwoń: <a href="tel:+48790524089">790 524 089</a><br>
-                lub napisz maila: <a href="mailto:kontakt@twojadomena.pl">kontakt@twojadomena.pl</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p><b>Maciej | Strony WWW Radom</b><br>
-            Działam głównie w Radomiu i okolicach | NIP: tu-wpisz-swój-NIP | 2026</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+                        <li>Podpięci
