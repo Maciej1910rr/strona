@@ -3,285 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strony WWW Radom - Maciej | Projekt w 5 dni od 990 zł</title>
+    <title>Strony WWW Radom - Maciej</title>
     <style>
-        * {margin: 0; padding: 0; box-sizing: border-box;}
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             line-height: 1.6;
-            color: #1a1a1a;
-            background: #fff;
+            color: #333;
+            background: #f4f4f4;
         }
         .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
         }
-        .hero {
+        header {
+            background: #1a1a1a;
+            color: #fff;
             padding: 60px 0 40px;
             text-align: center;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            font-weight: 800;
-            line-height: 1.2;
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 2.2rem;
         }
-        .hero p {
-            font-size: 1.25rem;
-            color: #444;
-            margin-bottom: 30px;
+        header p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
         }
         .btn {
             display: inline-block;
-            padding: 16px 32px;
             background: #25D366;
             color: white;
+            padding: 12px 25px;
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin: 5px;
-            transition: 0.2s;
-        }
-        .btn:hover {transform: scale(1.05);}
-        .btn-secondary {
-            background: #1a1a1a;
-        }
-        .section {
-            padding: 60px 0;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            font-weight: 700;
-        }
-        .portfolio {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        .portfolio-item {
-            border: 1px solid #e5e5e5;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-        .portfolio-item:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transform: translateY(-5px);
-        }
-        .portfolio-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background: #f0f0f0;
-        }
-        .portfolio-content {
-            padding: 20px;
-        }
-        .portfolio-content h3 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-        .portfolio-content p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-        .pricing {
-            background: #f8f9fa;
-        }
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .price-box {
-            background: white;
-            padding: 35px 30px;
-            border-radius: 12px;
-            border: 2px solid #e5e5e5;
-        }
-        .price-box.popular {
-            border-color: #25D366;
-            position: relative;
-        }
-        .popular-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #25D366;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-        }
-        .price {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin: 15px 0;
-        }
-        .price-box ul {
-            list-style: none;
-            margin: 25px 0;
-        }
-        .price-box li {
-            padding: 8px 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .price-box li:before {
-            content: "✓ ";
-            color: #25D366;
+            border-radius: 5px;
             font-weight: bold;
-            margin-right: 8px;
+            margin: 5px;
         }
-        .contact {
+        .btn-dark {
+            background: #333;
+        }
+        section {
+            padding: 40px 0;
+            background: #fff;
+            margin-bottom: 10px;
+        }
+        section h2 {
             text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        .dema {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .demo {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            width: 300px;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .demo img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: #ddd;
+            margin-bottom: 10px;
+        }
+        .cennik {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            text-align: center;
+        }
+        .pakiet {
+            border: 2px solid #ddd;
+            padding: 25px;
+            width: 300px;
+            border-radius: 5px;
+        }
+        .pakiet h3 { margin-top: 0; }
+        .cena {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #1a1a1a;
+        }
+        .kontakt {
             background: #1a1a1a;
             color: white;
+            text-align: center;
         }
-        .contact .section-title {color: white;}
-        .contact-info {
-            font-size: 1.3rem;
-            margin: 20px 0;
-        }
-        .contact-info a {
-            color: #25D366;
-            text-decoration: none;
-            font-weight: 700;
-        }
+        .kontakt a { color: #25D366; text-decoration: none; font-weight: bold; }
         footer {
             text-align: center;
-            padding: 30px 0;
-            color: #666;
+            padding: 20px;
+            background: #333;
+            color: #fff;
             font-size: 0.9rem;
         }
-        @media (max-width: 768px) {
-            .hero h1 {font-size: 1.8rem;}
-            .hero p {font-size: 1.1rem;}
+        .omnie {
+            background: #f4f4f4;
+            font-size: 0.95rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- HERO -->
-    <section class="hero">
+    <header>
         <div class="container">
-            <h1>Strony WWW dla firm z Radomia<br>które dowożą klientów z Google</h1>
-            <p>Projekt + wdrożenie w 5 dni. Prosto, na temat, od 990 zł.</p>
-            <a href="https://wa.me/48790524089?text=Cześć,%20chcę%20wycenę%20strony" class="btn">CHCĘ DARMOWĄ WYCENĘ NA WHATSAPP</a>
-            <a href="#portfolio" class="btn btn-secondary">Zobacz jak to wygląda</a>
+            <h1>Strony WWW dla firm z Radomia</h1>
+            <p>Robię strony które dowożą klientów z Google. Projekt + wdrożenie w 5 dni od 990 zł.</p>
+            <a href="https://wa.me/48576348632?text=Cześć,%20chcę%20wycenę%20strony" class="btn">DARMOWA WYCENA NA WHATSAPP</a>
+            <a href="#dema" class="btn btn-dark">Zobacz moje realizacje</a>
         </div>
-    </section>
+    </header>
 
-    <!-- PORTFOLIO -->
-    <section class="section" id="portfolio">
+    <section id="dema">
         <div class="container">
-            <h2 class="section-title">Tak może wyglądać Twoja strona ↓</h2>
-            <div class="portfolio">
-                <div class="portfolio-item">
-                    <img src="demo1.png" alt="Strona dla barbera">
-                    <div class="portfolio-content">
-                        <h3>Barber Shop Radom</h3>
-                        <p><b>Problem:</b> Klienci dzwonili o wolne terminy.<br>
-                        <b>Rozwiązanie:</b> Dodałem rezerwacje online. 60% mniej telefonów.</p>
-                    </div>
+            <h2>Tak wyglądają strony które robię</h2>
+            <div class="dema">
+                <div class="demo">
+                    <img src="demo1.png" alt="Demo 1">
+                    <h3>Barber Shop</h3>
+                    <p>Strona wizytówka + rezerwacje online. Koniec z telefonami o terminy.</p>
                 </div>
-                <div class="portfolio-item">
-                    <img src="demo2.png" alt="Strona dla pizzerii">
-                    <div class="portfolio-content">
-                        <h3>Pizzeria Centrum</h3>
-                        <p><b>Problem:</b> Menu w PDF, nikt nie mógł znaleźć telefonu.<br>
-                        <b>Rozwiązanie:</b> Menu na stronie + zamawianie 1 klik. +30% telefonów.</p>
-                    </div>
-                <div class="portfolio-item">
-                    <img src="demo3.png" alt="Strona dla mechanika">
-                    <div class="portfolio-content">
-                        <h3>Auto Mechanik</h3>
-                        <p><b>Problem:</b> Niewidoczny w Google, 0 zapytań.<br>
-                        <b>Rozwiązanie:</b> Strona + wizytówka Google. 8 zapytań w 1. tydzień.</p>
-                    </div>
+                <div class="demo">
+                    <img src="demo2.png" alt="Demo 2">
+                    <h3>Pizzeria</h3>
+                    <p>Menu na stronie + zamawianie jednym kliknięciem. +30% więcej telefonów.</p>
+                </div>
+                <div class="demo">
+                    <img src="demo3.png" alt="Demo 3">
+                    <h3>Auto Mechanik</h3>
+                    <p>Oferta + mapa dojazdu + opinie Google. 8 zapytań w pierwszy tydzień.</p>
                 </div>
             </div>
-            <div style="text-align: center;">
-                <a href="https://wa.me/48790524089?text=Chcę%20taką%20stronę%20za%20990zł" class="btn">PODOBA CI SIĘ? CHCĘ TAKĄ ZA 990 ZŁ</a>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="https://wa.me/48576348632?text=Chcę%20taką%20stronę%20za%20990zł" class="btn">CHCĘ TAKĄ ZA 990 ZŁ</a>
             </div>
         </div>
     </section>
 
-    <!-- CENNIK -->
-    <section class="section pricing">
+    <section>
         <div class="container">
-            <h2 class="section-title">Ile to kosztuje? Prosto i bez gwiazdek</h2>
-            <div class="pricing-grid">
-                <div class="price-box">
+            <h2>Ile to kosztuje?</h2>
+            <div class="cennik">
+                <div class="pakiet">
                     <h3>PAKIET START</h3>
-                    <div class="price">990 zł</div>
-                    <ul>
-                        <li>Strona wizytówka do 3 podstron</li>
-                        <li>Działa na telefonie</li>
-                        <li>Formularz kontaktowy</li>
-                        <li>Wdrożenie w 5 dni</li>
-                        <li>Domena + hosting na rok 250 zł</li>
-                    </ul>
-                    <a href="https://wa.me/48790524089?text=Wybieram%20PAKIET%20START" class="btn">Wybieram START</a>
+                    <div class="cena">990 zł</div>
+                    <p>Strona wizytówka do 3 podstron<br>
+                    Działa na telefonie<br>
+                    Formularz kontaktowy<br>
+                    Wdrożenie w 5 dni<br>
+                    Domena + hosting 250 zł/rok</p>
+                    <a href="https://wa.me/48576348632?text=Wybieram%20PAKIET%20START" class="btn">Wybieram START</a>
                 </div>
-                <div class="price-box popular">
-                    <div class="popular-badge">NAJCZĘŚCIEJ WYBIERANY</div>
+                <div class="pakiet" style="border-color: #25D366;">
                     <h3>PAKIET FIRMA</h3>
-                    <div class="price">1790 zł</div>
-                    <ul>
-                        <li><b>Wszystko ze START +</b></li>
-                        <li>Do 6 podstron</li>
-                        <li>Podpięcie Google Maps i opinii</li>
-                        <li>Pomogę z tekstami na stronę</li>
-                        <li>Podstawowa optymalizacja SEO</li>
-                        <li>Domena + hosting na rok GRATIS</li>
-                    </ul>
-                    <a href="https://wa.me/48790524089?text=Wybieram%20PAKIET%20FIRMA" class="btn">Wybieram FIRMA</a>
+                    <div class="cena">1790 zł</div>
+                    <p><b>Wszystko ze START +</b><br>
+                    Do 6 podstron<br>
+                    Google Maps + opinie<br>
+                    Pomoc z tekstami<br>
+                    Podstawowe SEO<br>
+                    Domena + hosting GRATIS</p>
+                    <a href="https://wa.me/48576348632?text=Wybieram%20PAKIET%20FIRMA" class="btn">Wybieram FIRMA</a>
                 </div>
             </div>
-            <p style="text-align: center; margin-top: 30px; color: #666;">
+            <p style="text-align: center; margin-top: 25px;">
                 <b>Płacisz 50% po akceptacji projektu. Resztę jak strona jest online.<br>Nie spodoba Ci się projekt = nie płacisz nic.</b>
             </p>
         </div>
     </section>
 
-    <!-- DLACZEGO JA -->
-    <section class="section">
-        <div class="container" style="max-width: 700px; text-align: center;">
-            <h2 class="section-title">Dlaczego ja, a nie agencja za 8 koła?</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 15px;"><b>1. Gadamy po ludzku.</b> Bez IT-bełkotu. Wiesz co dostajesz.</p>
-            <p style="font-size: 1.1rem; margin-bottom: 15px;"><b>2. Jestem z Radomia.</b> Wiesz do kogo dzwonisz. Nie znikam po kasie.</p>
-            <p style="font-size: 1.1rem;"><b>3. Robię w 5 dni.</b> Nie czekasz 2 miesiące na stronę.</p>
+    <section class="omnie">
+        <div class="container">
+            <h2>O mnie</h2>
+            <p style="text-align: center; max-width: 700px; margin: auto;">
+                Cześć, jestem Maciej. Robię strony dla lokalnych firm z Radomia i okolic. 
+                Bez lania wody i IT-bełkotu. Masz mieć stronę która zarabia, a nie tylko "jest". 
+                Działam szybko, jestem na miejscu i nie znikam po kasie.
+            </p>
         </div>
     </section>
 
-    <!-- KONTAKT -->
-    <section class="section contact">
+    <section class="kontakt">
         <div class="container">
-            <h2 class="section-title">Gadamy?</h2>
-            <div class="contact-info">
-                WhatsApp: <a href="https://wa.me/48790524089?text=Cześć,%20chcę%20wycenę%20strony">790 524 089</a><br>
-                Kliknij i napisz "WYCENA". Odpisuję w 15 min, 7 dni w tyg.
-            </div>
-            <div class="contact-info">
-                Lub DM: <a href="https://instagram.com/maciej_1910rr" target="_blank">IG @maciej_1910rr</a>
-            </div>
+            <h2>Gadamy?</h2>
+            <p style="font-size: 1.2rem;">
+                WhatsApp: <a href="https://wa.me/48576348632?text=Cześć,%20chcę%20wycenę%20strony">576 348 632</a><br>
+                Napisz "WYCENA". Odpisuję w 15 min.
+            </p>
+            <p>
+                Mail: <a href="mailto:maciej1910rr@proton.me">maciej1910rr@proton.me</a>
+            </p>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>Maciej | Strony WWW Radom | 2026</p>
-        </div>
+        <p>Maciej | Strony WWW Radom | 2026</p>
     </footer>
 
 </body>
