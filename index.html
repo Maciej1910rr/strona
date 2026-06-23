@@ -355,7 +355,55 @@
             color: var(--neon-green);
             text-decoration: none;
             font-weight: 700;
-        }
+        }<!-- REKLAMA -->
+<section class="section ads-section">
+    <div class="container">
+        <h2 class="section-title">📢 Zareklamuj się tutaj</h2>
+        <p class="section-subtitle">Twoja firma przed oczami setek przedsiębiorców z Radomia szukających stron WWW. Miejsc jest tylko kilka.</p>
+        <div class="features">
+            <div class="feature-box">
+                <div class="feature-icon">🟩</div>
+                <h3>Baner MINI</h3>
+                <div style="font-size: 1.8rem; font-weight: 800; color: var(--neon-green); margin: 10px 0;">99 zł / mies.</div>
+                <p>Logo + link do Twojej strony. Widoczny w stopce serwisu przez cały miesiąc.</p>
+                <a href="https://wa.me/48576348632?text=Chcę%20baner%20MINI%20na%20stronie" class="btn btn-secondary" style="margin-top: 15px; display: inline-block;">Zamawiam</a>
+            </div>
+            <div class="feature-box" style="border: 1px solid var(--neon-green); box-shadow: 0 0 25px rgba(37,211,102,0.2);">
+                <div class="feature-icon">🟦</div>
+                <h3>Baner STANDARD</h3>
+                <div style="font-size: 1.8rem; font-weight: 800; color: var(--neon-green); margin: 10px 0;">199 zł / mies.</div>
+                <p>Baner graficzny w sekcji głównej. Twoja firma widoczna dla każdego odwiedzającego.</p>
+                <a href="https://wa.me/48576348632?text=Chcę%20baner%20STANDARD%20na%20stronie" class="btn btn-secondary" style="margin-top: 15px; display: inline-block;">Zamawiam</a>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">🔶</div>
+                <h3>Baner PREMIUM</h3>
+                <div style="font-size: 1.8rem; font-weight: 800; color: var(--neon-green); margin: 10px 0;">349 zł / mies.</div>
+                <p>Wyróżniony baner na górze strony + wpis sponsorowany w sekcji realizacji.</p>
+                <a href="https://wa.me/48576348632?text=Chcę%20baner%20PREMIUM%20na%20stronie" class="btn btn-secondary" style="margin-top: 15px; display: inline-block;">Zamawiam</a>
+            </div>
+        </div>
+        <p style="text-align: center; color: #888; margin-top: 30px; font-size: 0.9rem;">Liczba miejsc ograniczona. Napisz na WhatsApp i dogadamy szczegóły.</p>
+    </div>
+</section>
+Ceny i opisy możesz zmienić jak chcesz — napisz to poprawię.You said: czemu przed kontaktczemu przed kontakt00:19Claude responded: Bo tak założyłem — ale możesz to wkleić gdziekolwiek chcesz na stronie.Bo tak założyłem — ale możesz to wkleić gdziekolwiek chcesz na stronie. Powiedz gdzie ma być i doprecyzuję, np.:
+
+po cenniku (zaraz pod pakietami)
+przed cennikiem
+na samym dole przed stopką
+You said: na samym dole przed stopkąna samym dole przed stopką00:19Claude responded: To wklej ten kod zaraz przed <!To wklej ten kod zaraz przed <!-- FOOTER -->, czyli przed:
+html<footer>
+I gotowe — sekcja reklam będzie na samym dole strony przed stopką.You said: jakto przed linijke  przed kontakt ?jakto przed linijke  przed kontakt ??00:20Claude responded: Nie, przed <footer> czyli przed tą linijką:Nie, przed <footer> czyli przed tą linijką:
+html<footer>
+    <div class="container">
+        <p>© 2025 Maciej | Strony Radom · Radom, Mazowieckie</p>
+    </div>
+</footer>
+Wklej kod reklam dokładnie nad <footer> — to jest ostatnia rzecz przed stopką.You said: amoge na sammkocu to wleicamoge na sammkocu to wleic00:23Claude responded: Tak, wklej go przed </body> na samym końcu pliku, czyli tutaj:Tak, wklej go przed </body> na samym końcu pliku, czyli tutaj:
+html    <!-- tutaj wklej kod reklam -->
+
+    <script>
+        function openLightbox...
         footer {
             text-align: center;
             padding: 40px 0;
