@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strony WWW Radom - Maciej | Projekt w 5 dni od 990 zł</title>
+    <meta name="description" content="Strony internetowe dla firm z Radomia. Projekt i wdrożenie w 5 dni od 990 zł. Zadzwoń lub napisz na WhatsApp.">
     <style>
         * {margin: 0; padding: 0; box-sizing: border-box;}
         body {
@@ -17,13 +18,41 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+        .header {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+        .header-cta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .header-cta a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
         .hero {
-            padding: 60px 0 40px;
+            padding: 80px 0 60px;
             text-align: center;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 15px;
             font-weight: 800;
             line-height: 1.2;
@@ -32,6 +61,9 @@
             font-size: 1.25rem;
             color: #444;
             margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .btn {
             display: inline-block;
@@ -44,23 +76,63 @@
             font-size: 1.1rem;
             margin: 5px;
             transition: 0.2s;
+            border: none;
+            cursor: pointer;
         }
         .btn:hover {transform: scale(1.05);}
         .btn-secondary {
             background: #1a1a1a;
         }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #1a1a1a;
+            color: #1a1a1a;
+        }
+        .trust-bar {
+            background: #1a1a1a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.95rem;
+        }
         .section {
-            padding: 60px 0;
+            padding: 70px 0;
         }
         .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
             font-weight: 700;
+        }
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .feature-box {
+            text-align: center;
+            padding: 20px;
+        }
+        .feature-box h3 {
+            font-size: 1.3rem;
+            margin: 15px 0 10px;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
         }
         .portfolio {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin-bottom: 30px;
         }
@@ -69,6 +141,7 @@
             border-radius: 12px;
             overflow: hidden;
             transition: 0.3s;
+            background: white;
         }
         .portfolio-item:hover {
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -76,40 +149,52 @@
         }
         .portfolio-item img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
             background: #f0f0f0;
         }
         .portfolio-content {
-            padding: 20px;
+            padding: 25px;
         }
         .portfolio-content h3 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
         }
         .portfolio-content p {
-            color: #666;
-            font-size: 0.95rem;
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        .portfolio-tag {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #25D366;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 10px;
         }
         .pricing {
             background: #f8f9fa;
         }
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
         .price-box {
             background: white;
-            padding: 35px 30px;
+            padding: 40px 30px;
             border-radius: 12px;
             border: 2px solid #e5e5e5;
         }
         .price-box.popular {
             border-color: #25D366;
             position: relative;
+            transform: scale(1.05);
         }
         .popular-badge {
             position: absolute;
@@ -124,16 +209,17 @@
             font-weight: 700;
         }
         .price {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 800;
             margin: 15px 0;
         }
         .price-box ul {
             list-style: none;
             margin: 25px 0;
+            text-align: left;
         }
         .price-box li {
-            padding: 8px 0;
+            padding: 10px 0;
             border-bottom: 1px solid #f0f0f0;
         }
         .price-box li:before {
@@ -141,6 +227,18 @@
             color: #25D366;
             font-weight: bold;
             margin-right: 8px;
+        }
+        .faq {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 25px 0;
+        }
+        .faq-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
         }
         .contact {
             text-align: center;
@@ -150,7 +248,8 @@
         .contact .section-title {color: white;}
         .contact-info {
             font-size: 1.3rem;
-            margin: 20px 0;
+            margin: 25px 0;
+            line-height: 1.8;
         }
         .contact-info a {
             color: #25D366;
@@ -159,59 +258,112 @@
         }
         footer {
             text-align: center;
-            padding: 30px 0;
+            padding: 40px 0;
             color: #666;
             font-size: 0.9rem;
+            background: #f8f9fa;
         }
         @media (max-width: 768px) {
-            .hero h1 {font-size: 1.8rem;}
+            .hero h1 {font-size: 2rem;}
             .hero p {font-size: 1.1rem;}
+            .price-box.popular {transform: scale(1);}
+            .header-cta {font-size: 0.9rem;}
+            .section-title {font-size: 1.8rem;}
         }
     </style>
 </head>
 <body>
 
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">Maciej | Strony Radom</div>
+            <div class="header-cta">
+                <a href="tel:+48790524089">790 524 089</a>
+                <a href="https://wa.me/48790524089?text=Cześć,%20chcę%20wycenę%20strony" class="btn" style="padding: 10px 20px; font-size: 0.95rem;">WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
     <!-- HERO -->
     <section class="hero">
         <div class="container">
             <h1>Strony WWW dla firm z Radomia<br>które dowożą klientów z Google</h1>
-            <p>Projekt + wdrożenie w 5 dni. Prosto, na temat, od 990 zł.</p>
-            <a href="https://wa.me/48790524089?text=Cześć,%20chcę%20wycenę%20strony" class="btn">CHCĘ DARMOWĄ WYCENĘ NA WHATSAPP</a>
-            <a href="#portfolio" class="btn btn-secondary">Zobacz jak to wygląda</a>
+            <p>Projekt + wdrożenie w 5 dni. Bez IT-bełkotu. Prosto, na temat, od 990 zł netto.</p>
+            <a href="https://wa.me/48790524089?text=Cześć,%20chcę%20darmową%20wycenę%20strony" class="btn">CHCĘ DARMOWĄ WYCENĘ NA WHATSAPP</a>
+            <a href="#realizacje" class="btn btn-secondary">Zobacz realizacje</a>
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+        <div class="container">
+            <b>Gwarancja:</b> Płacisz 50% po akceptacji projektu. Nie spodoba Ci się = nie płacisz nic.
+        </div>
+    </div>
+
+    <!-- DLACZEGO JA -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Dlaczego ja, a nie agencja za 8 tysięcy?</h2>
+            <div class="features">
+                <div class="feature-box">
+                    <div class="feature-icon">💬</div>
+                    <h3>Gadamy po ludzku</h3>
+                    <p>Bez IT-bełkotu. Wiesz co dostajesz i za co płacisz. Zero ściemy.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">📍</div>
+                    <h3>Jestem z Radomia</h3>
+                    <p>Wiesz do kogo dzwonisz. Nie znikam po kasie. Spotkamy się na mieście jak trzeba.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Robię w 5 dni</h3>
+                    <p>Nie czekasz 2 miesiące na stronę. W poniedziałek gadamy, w piątek masz stronę online.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- PORTFOLIO -->
-    <section class="section" id="portfolio">
+    <section class="section" id="realizacje" style="background: #f8f9fa;">
         <div class="container">
             <h2 class="section-title">Tak może wyglądać Twoja strona ↓</h2>
+            <p class="section-subtitle">Każda strona jest robiona pod konkretną firmę. Ma sprzedawać, nie tylko wyglądać.</p>
             <div class="portfolio">
                 <div class="portfolio-item">
                     <img src="demo1.png" alt="Strona dla barbera">
                     <div class="portfolio-content">
-                        <h3>Barber Shop Radom</h3>
-                        <p><b>Problem:</b> Klienci dzwonili o wolne terminy.<br>
-                        <b>Rozwiązanie:</b> Dodałem rezerwacje online. 60% mniej telefonów.</p>
+                        <span class="portfolio-tag">Barber Shop</span>
+                        <h3>Barber Radom</h3>
+                        <p><b>Problem:</b> Klienci dzwonili non stop o wolne terminy. Właściciel nie miał czasu strzyc.<br><br>
+                        <b>Rozwiązanie:</b> Dodałem system rezerwacji online Booksy. <br><br>
+                        <b>Wynik:</b> 60% mniej telefonów. Więcej czasu na klientów.</p>
                     </div>
-                </div>
                 <div class="portfolio-item">
                     <img src="demo2.png" alt="Strona dla pizzerii">
                     <div class="portfolio-content">
+                        <span class="portfolio-tag">Gastronomia</span>
                         <h3>Pizzeria Centrum</h3>
-                        <p><b>Problem:</b> Menu w PDF, nikt nie mógł znaleźć telefonu.<br>
-                        <b>Rozwiązanie:</b> Menu na stronie + zamawianie 1 klik. +30% telefonów.</p>
+                        <p><b>Problem:</b> Menu w PDF na Facebooku. Nikt nie mógł znaleźć telefonu do zamówień.<br><br>
+                        <b>Rozwiązanie:</b> Menu na stronie + duży przycisk "Zadzwoń i zamów".<br><br>
+                        <b>Wynik:</b> +30% telefonów w pierwszym miesiącu.</p>
                     </div>
+                </div>
                 <div class="portfolio-item">
                     <img src="demo3.png" alt="Strona dla mechanika">
                     <div class="portfolio-content">
+                        <span class="portfolio-tag">Usługi</span>
                         <h3>Auto Mechanik</h3>
-                        <p><b>Problem:</b> Niewidoczny w Google, 0 zapytań.<br>
-                        <b>Rozwiązanie:</b> Strona + wizytówka Google. 8 zapytań w 1. tydzień.</p>
+                        <p><b>Problem:</b> Niewidoczny w Google. Zero zapytań z internetu. Tylko poczta pantoflowa.<br><br>
+                        <b>Rozwiązanie:</b> Prosta strona + optymalizacja wizytówki Google.<br><br>
+                        <b>Wynik:</b> 8 zapytań przez formularz w pierwszym tygodniu.</p>
                     </div>
                 </div>
             </div>
             <div style="text-align: center;">
-                <a href="https://wa.me/48790524089?text=Chcę%20taką%20stronę%20za%20990zł" class="btn">PODOBA CI SIĘ? CHCĘ TAKĄ ZA 990 ZŁ</a>
+                <a href="https://wa.me/48790524089?text=Chcę%20taką%20stronę%20za%20990zł" class="btn">CHCĘ TAKĄ STRONĘ ZA 990 ZŁ</a>
             </div>
         </div>
     </section>
@@ -220,18 +372,20 @@
     <section class="section pricing">
         <div class="container">
             <h2 class="section-title">Ile to kosztuje? Prosto i bez gwiazdek</h2>
+            <p class="section-subtitle">Wybierz pakiet i działamy. Ceny netto.</p>
             <div class="pricing-grid">
                 <div class="price-box">
                     <h3>PAKIET START</h3>
                     <div class="price">990 zł</div>
                     <ul>
                         <li>Strona wizytówka do 3 podstron</li>
-                        <li>Działa na telefonie</li>
-                        <li>Formularz kontaktowy</li>
-                        <li>Wdrożenie w 5 dni</li>
+                        <li>Działa idealnie na telefonie</li>
+                        <li>Formularz kontaktowy na maila</li>
+                        <li>Wdrożenie w 5 dni roboczych</li>
+                        <li>Instrukcja jak edytować teksty</li>
                         <li>Domena + hosting na rok 250 zł</li>
                     </ul>
-                    <a href="https://wa.me/48790524089?text=Wybieram%20PAKIET%20START" class="btn">Wybieram START</a>
+                    <a href="https://wa.me/48790524089?text=Wybieram%20PAKIET%20START" class="btn btn-outline">Wybieram START</a>
                 </div>
                 <div class="price-box popular">
                     <div class="popular-badge">NAJCZĘŚCIEJ WYBIERANY</div>
@@ -239,48 +393,59 @@
                     <div class="price">1790 zł</div>
                     <ul>
                         <li><b>Wszystko ze START +</b></li>
-                        <li>Do 6 podstron</li>
+                        <li>Rozbudowa do 6 podstron</li>
                         <li>Podpięcie Google Maps i opinii</li>
                         <li>Pomogę z tekstami na stronę</li>
-                        <li>Podstawowa optymalizacja SEO</li>
-                        <li>Domena + hosting na rok GRATIS</li>
+                        <li>Podstawowa optymalizacja SEO pod Radom</li>
+                        <li>Konfiguracja wizytówki Google</li>
+                        <li><b>Domena + hosting na rok GRATIS</b></li>
                     </ul>
                     <a href="https://wa.me/48790524089?text=Wybieram%20PAKIET%20FIRMA" class="btn">Wybieram FIRMA</a>
                 </div>
             </div>
-            <p style="text-align: center; margin-top: 30px; color: #666;">
-                <b>Płacisz 50% po akceptacji projektu. Resztę jak strona jest online.<br>Nie spodoba Ci się projekt = nie płacisz nic.</b>
-            </p>
         </div>
     </section>
 
-    <!-- DLACZEGO JA -->
+    <!-- FAQ -->
     <section class="section">
-        <div class="container" style="max-width: 700px; text-align: center;">
-            <h2 class="section-title">Dlaczego ja, a nie agencja za 8 koła?</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 15px;"><b>1. Gadamy po ludzku.</b> Bez IT-bełkotu. Wiesz co dostajesz.</p>
-            <p style="font-size: 1.1rem; margin-bottom: 15px;"><b>2. Jestem z Radomia.</b> Wiesz do kogo dzwonisz. Nie znikam po kasie.</p>
-            <p style="font-size: 1.1rem;"><b>3. Robię w 5 dni.</b> Nie czekasz 2 miesiące na stronę.</p>
+        <div class="container">
+            <h2 class="section-title">Pytania które zawsze padają</h2>
+            <div class="faq">
+                <div class="faq-item">
+                    <h3>Co jak mi się nie spodoba?</h3>
+                    <p>Robię projekt graficzny. Jak Ci się nie spodoba, to kończymy współpracę i nie płacisz nic. Zero ryzyka. Płacisz 50% zaliczki dopiero jak zaakceptujesz wygląd.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Czy będę mógł sam coś zmienić na stronie?</h3>
+                    <p>Tak. Dostajesz prostą instrukcję wideo jak zmieniać teksty i zdjęcia. Jak nie chcesz się w to bawić, to małe zmiany robię za darmo przez pierwszy rok.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Co z hostingiem i domeną po roku?</h3>
+                    <p>W pakiecie FIRMA masz pierwszy rok gratis. Potem to koszt 250 zł netto na rok za wszystko. Płacisz raz i masz spokój. Mogę też przepiąć stronę na Twój hosting.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- KONTAKT -->
-    <section class="section contact">
+    <section class="section contact" id="kontakt">
         <div class="container">
-            <h2 class="section-title">Gadamy?</h2>
+            <h2 class="section-title">Dobra, gadamy?</h2>
+            <p class="section-subtitle" style="color: #ccc;">Odpisuję w 15 min, 7 dni w tygodniu od 8:00 do 21:00</p>
             <div class="contact-info">
-                WhatsApp: <a href="https://wa.me/48790524089?text=Cześć,%20chcę%20wycenę%20strony">790 524 089</a><br>
-                Kliknij i napisz "WYCENA". Odpisuję w 15 min, 7 dni w tyg.
+                <a href="https://wa.me/48790524089?text=Cześć,%20chcę%20wycenę%20strony" class="btn">Napisz na WhatsApp: 790 524 089</a>
             </div>
             <div class="contact-info">
-                Lub DM: <a href="https://instagram.com/maciej_1910rr" target="_blank">IG @maciej_1910rr</a>
+                lub zadzwoń: <a href="tel:+48790524089">790 524 089</a><br>
+                lub napisz maila: <a href="mailto:kontakt@twojadomena.pl">kontakt@twojadomena.pl</a>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>Maciej | Strony WWW Radom | 2026</p>
+            <p><b>Maciej | Strony WWW Radom</b><br>
+            Działam głównie w Radomiu i okolicach | NIP: tu-wpisz-swój-NIP | 2026</p>
         </div>
     </footer>
 
