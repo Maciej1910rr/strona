@@ -1,789 +1,288 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WebDesign Radom - Strony WWW 990zł | Portfolio Demo</title>
-<meta name="description" content="Profesjonalne strony www dla firm z Radomia. Wideo w tle, zielone ramki, klikane portfolio. WhatsApp +48 123 456 789">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root {
-  --primary: #10b981;
-  --primary-dark: #059669;
-  --accent: #34d399;
-  --dark: #0f172a;
-  --gray: #64748b;
-  --light: #f0fdf4;
-  --white: #ffffff;
-  --gradient: linear-gradient(135deg, #10b981 0%, #34d399 50%, #6ee7b7 100%);
-  --shadow: 0 20px 60px -15px rgba(16, 185, 129, 0.5);
-  --radius: 24px;
-  --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  color: var(--dark);
-  background: #fafafa;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-
-h1, h2, h3 {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 800;
-  line-height: 1.1;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-section {
-  padding: 120px 0;
-  margin: 32px;
-  border: 5px solid var(--primary);
-  border-radius: var(--radius);
-  background: var(--white);
-  box-shadow: var(--shadow);
-  position: relative;
-  overflow: hidden;
-}
-
-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 6px;
-  background: var(--gradient);
-}
-
-@media (max-width: 768px) {
-  section {
-    margin: 16px;
-    padding: 80px 0;
-  }
-}
-
-/* Header */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(255, 255, 0.9);
-  backdrop-filter: blur(20px);
-  border-bottom: 5px solid var(--primary);
-  box-shadow: 0 4px 30px rgba(16, 185, 129, 0.1);
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 90px;
-}
-
-.logo {
-  font-size: 32px;
-  font-weight: 900;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-decoration: none;
-}
-
-.nav-links {
-  display: flex;
-  gap: 48px;
-  list-style: none;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--dark);
-  font-weight: 700;
-  font-size: 16px;
-  transition: var(--transition);
-  position: relative;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 0;
-  height: 4px;
-  background: var(--gradient);
-  transition: var(--transition);
-  border-radius: 2px;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* Hero z wideo */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding-top: 90px;
-  position: relative;
-  overflow: hidden;
-  border: 5px solid var(--primary);
-  margin: 32px;
-  border-radius: var(--radius);
-}
-
-.hero-video-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -2;
-}
-
-.hero-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(240, 253, 244, 0.97) 0%, rgba(16, 185, 129, 0.15) 100%);
-  z-index: -1;
-}
-
-.hero-content {
-  max-width: 900px;
-  position: relative;
-  z-index: 1;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 28px;
-  background: var(--white);
-  border: 4px solid var(--primary);
-  border-radius: 50px;
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--primary);
-  margin-bottom: 36px;
-  box-shadow: var(--shadow);
-}
-
-.online-dot {
-  width: 10px;
-  height: 10px;
-  background: #fbbf24;
-  border-radius: 50%;
-  animation: pulse-dot 2s infinite;
-}
-
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-.hero h1 {
-  font-size: clamp(48px, 8vw, 84px);
-  margin-bottom: 32px;
-  color: var(--dark);
-}
-
-.hero h1 span {
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero p {
-  font-size: clamp(20px, 3vw, 24px);
-  color: var(--gray);
-  margin-bottom: 48px;
-  font-weight: 500;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 18px 48px;
-  border-radius: 50px;
-  font-weight: 800;
-  font-size: 18px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-primary {
-  background: var(--gradient);
-  color: var(--white);
-  box-shadow: 0 10px 40px 0 rgba(16, 185, 129, 0.6);
-}
-
-.btn-primary:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 50px 0 rgba(16, 185, 129, 0.8);
-}
-
-.btn-secondary {
-  background: var(--white);
-  color: var(--dark);
-  border: 4px solid var(--primary);
-}
-
-.btn-secondary:hover {
-  background: var(--light);
-}
-
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
-  margin-top: 100px;
-  padding-top: 60px;
-  border-top: 4px solid var(--primary);
-}
-
-.stat-item h3 {
-  font-size: 56px;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 12px;
-}
-
-.stat-item p {
-  font-size: 16px;
-  color: var(--gray);
-  font-weight: 700;
-}
-
-/* Section Header */
-.section-header {
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto 100px;
-}
-
-.section-badge {
-  display: inline-block;
-  padding: 10px 24px;
-  background: var(--light);
-  color: var(--primary);
-  border: 4px solid var(--primary);
-  border-radius: 50px;
-  font-size: 15px;
-  font-weight: 800;
-  margin-bottom: 24px;
-}
-
-.section-header h2 {
-  font-size: clamp(42px, 7vw, 64px);
-  margin-bottom: 24px;
-}
-
-.section-header p {
-  font-size: 20px;
-  color: var(--gray);
-}
-
-/* Features */
-.features {
-  background: var(--light);
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 36px;
-}
-
-.feature-card {
-  background: var(--white);
-  padding: 56px 40px;
-  border-radius: var(--radius);
-  border: 5px solid var(--primary);
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-}
-
-.feature-card:hover {
-  transform: translateY(-16px);
-  box-shadow: var(--shadow-lg);
-}
-
-.feature-icon {
-  width: 80px;
-  height: 80px;
-  background: var(--gradient);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 32px;
-  font-size: 36px;
-  box-shadow: 0 12px 24px rgba(16, 185, 129, 0.4);
-}
-
-.feature-card h3 {
-  font-size: 26px;
-  margin-bottom: 16px;
-}
-
-/* Portfolio z DEMO - KLIKANE */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  gap: 32px;
-}
-
-.gallery-item {
-  position: relative;
-  border-radius: var(--radius);
-  overflow: hidden;
-  aspect-ratio: 16/10;
-  border: 5px solid var(--primary);
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-  text-decoration: none;
-  display: block;
-  cursor: pointer;
-}
-
-.gallery-item:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.gallery-item:hover img {
-  transform: scale(1.2) rotate(3deg);
-}
-
-.gallery-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(16, 185, 129, 0.98) 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: var(--transition);
-  gap: 16px;
-}
-
-.gallery-item:hover .gallery-overlay {
-  opacity: 1;
-}
-
-.gallery-overlay h4 {
-  color: var(--white);
-  font-size: 28px;
-  transform: translateY(20px);
-  transition: var(--transition);
-}
-
-.gallery-overlay .demo-btn {
-  background: var(--white);
-  color: var(--primary);
-  padding: 12px 32px;
-  border-radius: 50px;
-  font-weight: 800;
-  font-size: 16px;
-  transform: translateY(20px);
-  transition: var(--transition);
-}
-
-.gallery-item:hover .gallery-overlay h4,
-.gallery-item:hover .gallery-overlay .demo-btn {
-  transform: translateY(0);
-}
-
-/* O Mnie */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.about-img {
-  border-radius: var(--radius);
-  border: 5px solid var(--primary);
-  box-shadow: var(--shadow);
-}
-
-/* Contact Buttons */
-.contact-buttons {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 32px;
-}
-
-.btn-whatsapp {
-  background: #25D366;
-  color: var(--white);
-}
-
-.btn-mail {
-  background: var(--gradient);
-  color: var(--white);
-}
-
-/* Pricing */
-.pricing-card {
-  max-width: 600px;
-  margin: 0 auto;
-  background: var(--white);
-  border-radius: 32px;
-  padding: 64px 56px;
-  box-shadow: var(--shadow-lg);
-  border: 6px solid var(--primary);
-  position: relative;
-}
-
-.pricing-card::before {
-  content: 'BESTSELLER 2024';
-  position: absolute;
-  top: 28px;
-  right: -60px;
-  background: var(--gradient);
-  color: var(--white);
-  padding: 12px 70px;
-  font-size: 14px;
-  font-weight: 900;
-  transform: rotate(45deg);
-  box-shadow: var(--shadow);
-}
-
-.price {
-  font-size: 84px;
-  font-weight: 900;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1;
-}
-
-.pricing-features {
-  list-style: none;
-  margin: 48px 0;
-}
-
-.pricing-features li {
-  padding: 20px 0;
-  border-bottom: 3px solid var(--light);
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  font-weight: 600;
-  font-size: 17px;
-}
-
-.check-icon {
-  width: 32px;
-  height: 32px;
-  background: var(--gradient);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--white);
-  font-weight: 900;
-  box-shadow: 0 6px 12px rgba(16, 185, 129, 0.4);
-}
-
-/* WhatsApp Float */
-.whatsapp-float {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  width: 76px;
-  height: 76px;
-  background: #25D366;
-  border: 5px solid var(--primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 40px rgba(16, 185, 129, 0.7);
-  z-index: 999;
-  animation: pulse-whatsapp 2s infinite;
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-@keyframes pulse-whatsapp {
-  0%, 100% { 
-    box-shadow: 0 10px 40px rgba(16, 185, 129, 0.7);
-    transform: scale(1);
-  }
-  50% { 
-    box-shadow: 0 10px 60px rgba(16, 185, 129, 1);
-    transform: scale(1.08);
-  }
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.2);
-}
-
-/* Footer */
-footer {
-  background: var(--dark);
-  color: var(--white);
-  padding: 100px 0 50px;
-  border-top: 5px solid var(--primary);
-  margin: 32px;
-  border-radius: var(--radius);
-}
-
-.footer-bottom {
-  padding-top: 50px;
-  border-top: 3px solid #334155;
-  text-align: center;
-  color: #94a3b8;
-}
-
-/* Animacje */
-.fade-in {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-  .hero-stats {
-    grid-template-columns: 1fr;
-  }
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strony WWW Radom - Maciej | Projekt w 5 dni od 990 zł</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fff;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .hero {
+            padding: 60px 0 40px;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: #444;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 5px;
+            transition: 0.2s;
+        }
+        .btn:hover {transform: scale(1.05);}
+        .btn-secondary {
+            background: #1a1a1a;
+        }
+        .section {
+            padding: 60px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .portfolio-item {
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .portfolio-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f0f0f0;
+        }
+        .portfolio-content {
+            padding: 20px;
+        }
+        .portfolio-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        .portfolio-content p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        .pricing {
+            background: #f8f9fa;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .price-box {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 12px;
+            border: 2px solid #e5e5e5;
+        }
+        .price-box.popular {
+            border-color: #25D366;
+            position: relative;
+        }
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #25D366;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+        .price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 15px 0;
+        }
+        .price-box ul {
+            list-style: none;
+            margin: 25px 0;
+        }
+        .price-box li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .price-box li:before {
+            content: "✓ ";
+            color: #25D366;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .contact {
+            text-align: center;
+            background: #1a1a1a;
+            color: white;
+        }
+        .contact .section-title {color: white;}
+        .contact-info {
+            font-size: 1.3rem;
+            margin: 20px 0;
+        }
+        .contact-info a {
+            color: #25D366;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {font-size: 1.8rem;}
+            .hero p {font-size: 1.1rem;}
+        }
+    </style>
 </head>
 <body>
-<header>
-  <nav class="container nav">
-    <a href="#home" class="logo">WebDesign PRO</a>
-    <ul class="nav-links">
-      <li><a href="#home">Start</a></li>
-      <li><a href="#features">Oferta</a></li>
-      <li><a href="#portfolio">Demo</a></li>
-      <li><a href="#about">O Mnie</a></li>
-      <li><a href="#pricing">Cennik</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-    </ul>
-  </nav>
-</header>
 
-<main>
-  <section class="hero" id="home">
-    <div class="hero-video-wrapper">
-      <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=80">
-        <source src="https://cdn.coverr.co/videos/coverr-typing-on-computer-keyboard-1584/1080p.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="hero-overlay"></div>
-    <div class="container">
-      <div class="hero-content fade-in">
-        <div class="hero-badge">
-          <span class="online-dot"></span>
-          Strony które sprzedają
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Strony WWW dla firm z Radomia<br>które dowożą klientów z Google</h1>
+            <p>Projekt + wdrożenie w 5 dni. Prosto, na temat, od 990 zł.</p>
+            <a href="https://wa.me/48790524089?text=Cześć,%20chcę%20wycenę%20strony" class="btn">CHCĘ DARMOWĄ WYCENĘ NA WHATSAPP</a>
+            <a href="#portfolio" class="btn btn-secondary">Zobacz jak to wygląda</a>
         </div>
-        <h1>Masz firmę w <span>Radomiu?</span><br>Strona www za <span>990 zł</span> w 5 dni</h1>
-        <p>Nowoczesne strony z wideo w tle, zielonymi ramkami i animacjami. Nie szablon z kreatora. Prawdziwy design który konwertuje klientów.</p>
-        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-          <a href="#pricing" class="btn btn-primary">Zamawiam stronę PRO</a>
-          <a href="#portfolio" class="btn" style="background: var(--white); color: var(--dark); border: 4px solid var(--primary);">Zobacz Demo</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat-item">
-            <h3>50+</h3>
-            <p>Zrealizowanych projektów</p>
-          </div>
-          <div class="stat-item">
-            <h3>5 dni</h3>
-            <p>Średni czas realizacji</p>
-          </div>
-          <div class="stat-item">
-            <h3>98%</h3>
-            <p>Zadowolonych klientów</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="features" id="features">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-badge">Co dostajesz</span>
-        <h2>To nie jest strona z kreatora</h2>
-        <p>Każdy projekt to indywidualny kod. Zielone ramki premium, wideo tło, animacje. Wygląda na 10 tysięcy, kosztuje 990 zł.</p>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card fade-in">
-          <div class="feature-icon">🎬</div>
-          <h3>Wideo w tle hero</h3>
-          <p>Dynamiczne tło z programowaniem. Na mobile elegancki gradient. Efekt WOW od pierwszej sekundy.</p>
+    <!-- PORTFOLIO -->
+    <section class="section" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Tak może wyglądać Twoja strona ↓</h2>
+            <div class="portfolio">
+                <div class="portfolio-item">
+                    <img src="demo1.png" alt="Strona dla barbera">
+                    <div class="portfolio-content">
+                        <h3>Barber Shop Radom</h3>
+                        <p><b>Problem:</b> Klienci dzwonili o wolne terminy.<br>
+                        <b>Rozwiązanie:</b> Dodałem rezerwacje online. 60% mniej telefonów.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="demo2.png" alt="Strona dla pizzerii">
+                    <div class="portfolio-content">
+                        <h3>Pizzeria Centrum</h3>
+                        <p><b>Problem:</b> Menu w PDF, nikt nie mógł znaleźć telefonu.<br>
+                        <b>Rozwiązanie:</b> Menu na stronie + zamawianie 1 klik. +30% telefonów.</p>
+                    </div>
+                <div class="portfolio-item">
+                    <img src="demo3.png" alt="Strona dla mechanika">
+                    <div class="portfolio-content">
+                        <h3>Auto Mechanik</h3>
+                        <p><b>Problem:</b> Niewidoczny w Google, 0 zapytań.<br>
+                        <b>Rozwiązanie:</b> Strona + wizytówka Google. 8 zapytań w 1. tydzień.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="https://wa.me/48790524089?text=Chcę%20taką%20stronę%20za%20990zł" class="btn">PODOBA CI SIĘ? CHCĘ TAKĄ ZA 990 ZŁ</a>
+            </div>
         </div>
-        <div class="feature-card fade-in">
-          <div class="feature-icon">💚</div>
-          <h3>Zielone ramki premium 5px</h3>
-          <p>Każda sekcja w grubej zielonej obramówce. Wyróżnia się na tle konkurencji. Wygląda drogo.</p>
-        </div>
-        <div class="feature-card fade-in">
-          <div class="feature-icon">⚡</div>
-          <h3>Animacje na poziomie</h3>
-          <p>Fade-in, parallax, liczniki animowane, hover glow. Strona żyje i reaguje na użytkownika.</p>
-        </div>
-        <div class="feature-card fade-in">
-          <div class="feature-icon">📱</div>
-          <h3>Mobile first design</h3>
-          <p>70% ruchu to telefon. U nas strona na mobile wygląda lepiej niż na desktopie. Gwarancja.</p>
-        </div>
-        <div class="feature-card fade-in">
-          <div class="feature-icon">🚀</div>
-          <h3>Turbo szybkość 1.2s</h3>
-          <p>Optymalizacja obrazów, lazy loading, minifikacja CSS/JS. Google PageSpeed 95+.</p>
-        </div>
-        <div class="feature-card fade-in">
-          <div class="feature-icon">🎯</div>
-          <h3>SEO lokalne Radom</h3>
-          <p>Optymalizacja pod "Radom + Twoja branża". Klienci znajdą Cię w Google Maps i wyszukiwarce.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="portfolio">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-badge">Portfolio Demo</span>
-        <h2>Kliknij w zdjęcie żeby zobaczyć demo</h2>
-        <p>Każde portfolio to działająca strona. Kliknij i sprawdź jak wygląda na żywo. Zrób demo1.html do demo6.html na GitHubie.</p>
-      </div>
-      <div class="gallery-grid">
-        <a href="demo1.html" class="gallery-item fade-in" target="_blank">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Demo Agencja">
-          <div class="gallery-overlay">
-            <h4>Agencja Kreatywna</h4>
-            <span class="demo-btn">Zobacz Demo →</span>
-          </div>
-        </a>
-        <a href="demo2.html" class="gallery-item fade-in" target="_blank">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Demo Kancelaria">
-          <div class="gallery-overlay">
-            <h4>Kancelaria Prawna</h4>
-            <span class="demo-btn">Zobacz Demo →</span>
-          </div>
-        </a>
-        <a href="demo3.html" class="gallery-item fade-in" target="_blank">
-          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80" alt="Demo Sklep">
-          <div class="gallery-overlay">
-            <h4>Sklep E-commerce</h4>
-            <span class="demo-btn">Zobacz Demo →</span>
-          </div>
-        </a>
-        <a href="demo4.html" class="gallery-item fade-in" target="_blank">
-          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Demo Restauracja">
-          <div class="gallery-overlay">
-            <h4>Restauracja</h4>
-            <span class="demo-btn">Zobacz Demo →</span>
-          </div>
-        </a>
-        <a href="demo5.html" class="gallery-item fade-in" target="_blank">
-          <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&q=80" alt="Demo Beauty">
-          <div class="gallery-overlay">
-            <h4>Salon Beauty</h4>
-            <span class="demo-btn">Zobacz Demo →</span>
-          </div>
-        </a>
-        <a href="demo6.html" class="gallery-item fade-in" target="_blank">
-          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80" alt="Demo Budowlanka">
-          <div class="gallery-overlay">
-            <h4>Firma Budowlana</h4>
-            <span class="demo-btn">Zobacz Demo →</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
+    <!-- CENNIK -->
+    <section class="section pricing">
+        <div class="container">
+            <h2 class="section-title">Ile to kosztuje? Prosto i bez gwiazdek</h2>
+            <div class="pricing-grid">
+                <div class="price-box">
+                    <h3>PAKIET START</h3>
+                    <div class="price">990 zł</div>
+                    <ul>
+                        <li>Strona wizytówka do 3 podstron</li>
+                        <li>Działa na telefonie</li>
+                        <li>Formularz kontaktowy</li>
+                        <li>Wdrożenie w 5 dni</li>
+                        <li>Domena + hosting na rok 250 zł</li>
+                    </ul>
+                    <a href="https://wa.me/48790524089?text=Wybieram%20PAKIET%20START" class="btn">Wybieram START</a>
+                </div>
+                <div class="price-box popular">
+                    <div class="popular-badge">NAJCZĘŚCIEJ WYBIERANY</div>
+                    <h3>PAKIET FIRMA</h3>
+                    <div class="price">1790 zł</div>
+                    <ul>
+                        <li><b>Wszystko ze START +</b></li>
+                        <li>Do 6 podstron</li>
+                        <li>Podpięcie Google Maps i opinii</li>
+                        <li>Pomogę z tekstami na stronę</li>
+                        <li>Podstawowa optymalizacja SEO</li>
+                        <li>Domena + hosting na rok GRATIS</li>
+                    </ul>
+                    <a href="https://wa.me/48790524089?text=Wybieram%20PAKIET%20FIRMA" class="btn">Wybieram FIRMA</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; color: #666;">
+                <b>Płacisz 50% po akceptacji projektu. Resztę jak strona jest online.<br>Nie spodoba Ci się projekt = nie płacisz nic.</b>
+            </p>
+        </div>
+    </section>
 
-  <section id="about">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-badge">O Mnie</span>
-        <h2>Cześć, jestem z Radomia</h2>
-        <p>Od 5 lat
+    <!-- DLACZEGO JA -->
+    <section class="section">
+        <div class="container" style="max-width: 700px; text-align: center;">
+            <h2 class="section-title">Dlaczego ja, a nie agencja za 8 koła?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 15px;"><b>1. Gadamy po ludzku.</b> Bez IT-bełkotu. Wiesz co dostajesz.</p>
+            <p style="font-size: 1.1rem; margin-bottom: 15px;"><b>2. Jestem z Radomia.</b> Wiesz do kogo dzwonisz. Nie znikam po kasie.</p>
+            <p style="font-size: 1.1rem;"><b>3. Robię w 5 dni.</b> Nie czekasz 2 miesiące na stronę.</p>
+        </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section class="section contact">
+        <div class="container">
+            <h2 class="section-title">Gadamy?</h2>
+            <div class="contact-info">
+                WhatsApp: <a href="https://wa.me/48790524089?text=Cześć,%20chcę%20wycenę%20strony">790 524 089</a><br>
+                Kliknij i napisz "WYCENA". Odpisuję w 15 min, 7 dni w tyg.
+            </div>
+            <div class="contact-info">
+                Lub DM: <a href="https://instagram.com/maciej_1910rr" target="_blank">IG @maciej_1910rr</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Maciej | Strony WWW Radom | 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>
