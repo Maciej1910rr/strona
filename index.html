@@ -3,27 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Radom Web Studio - Strony WWW 990zł | Wideo Tło + Demo</title>
-<meta name="description" content="Profesjonalne strony internetowe dla firm z Radomia. Wideo w tle, zielone ramki, portfolio z demo. Realizacja 5 dni. 990 PLN.">
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>WebDesign Radom - Strony WWW 990zł | Portfolio Demo</title>
+<meta name="description" content="Profesjonalne strony www dla firm z Radomia. Wideo w tle, zielone ramki, klikane portfolio. WhatsApp +48 123 456 789">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --primary: #10b981;
   --primary-dark: #059669;
-  --primary-light: #34d399;
-  --accent: #6ee7b7;
+  --accent: #34d399;
   --dark: #0f172a;
   --gray: #64748b;
   --light: #f0fdf4;
   --white: #ffffff;
   --gradient: linear-gradient(135deg, #10b981 0%, #34d399 50%, #6ee7b7 100%);
   --shadow: 0 20px 60px -15px rgba(16, 185, 129, 0.5);
-  --shadow-lg: 0 35px 60px -15px rgba(16, 185, 129, 0.6);
   --radius: 24px;
+  --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -44,10 +41,16 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
   font-family: 'Outfit', sans-serif;
   font-weight: 800;
   line-height: 1.1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .container {
@@ -92,7 +95,6 @@ header {
   z-index: 1000;
   background: rgba(255, 255, 0.9);
   backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   border-bottom: 5px solid var(--primary);
   box-shadow: 0 4px 30px rgba(16, 185, 129, 0.1);
 }
@@ -125,7 +127,7 @@ header {
   color: var(--dark);
   font-weight: 700;
   font-size: 16px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition);
   position: relative;
 }
 
@@ -137,16 +139,12 @@ header {
   width: 0;
   height: 4px;
   background: var(--gradient);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition);
   border-radius: 2px;
 }
 
 .nav-links a:hover::after {
   width: 100%;
-}
-
-.nav-links a:hover {
-  color: var(--primary);
 }
 
 /* Hero z wideo */
@@ -215,7 +213,7 @@ header {
   box-shadow: var(--shadow);
 }
 
-.hero-badge .online-dot {
+.online-dot {
   width: 10px;
   height: 10px;
   background: #fbbf24;
@@ -259,7 +257,7 @@ header {
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.4, 0.2, 1);
+  transition: var(--transition);
   position: relative;
   overflow: hidden;
 }
@@ -270,24 +268,19 @@ header {
   box-shadow: 0 10px 40px 0 rgba(16, 185, 129, 0.6);
 }
 
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  transition: left 0.6s;
-}
-
-.btn-primary:hover::before {
-  left: 100%;
-}
-
 .btn-primary:hover {
   transform: translateY(-4px);
   box-shadow: 0 15px 50px 0 rgba(16, 185, 129, 0.8);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--dark);
+  border: 4px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--light);
 }
 
 .hero-stats {
@@ -360,14 +353,12 @@ header {
   border-radius: var(--radius);
   border: 5px solid var(--primary);
   box-shadow: var(--shadow);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
+  transition: var(--transition);
 }
 
 .feature-card:hover {
   transform: translateY(-16px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--accent);
 }
 
 .feature-icon {
@@ -388,7 +379,7 @@ header {
   margin-bottom: 16px;
 }
 
-/* Portfolio z DEMO */
+/* Portfolio z DEMO - KLIKANE */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
@@ -402,9 +393,10 @@ header {
   aspect-ratio: 16/10;
   border: 5px solid var(--primary);
   box-shadow: var(--shadow);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition);
   text-decoration: none;
   display: block;
+  cursor: pointer;
 }
 
 .gallery-item:hover {
@@ -432,7 +424,7 @@ header {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition);
   gap: 16px;
 }
 
@@ -444,7 +436,7 @@ header {
   color: var(--white);
   font-size: 28px;
   transform: translateY(20px);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition);
 }
 
 .gallery-overlay .demo-btn {
@@ -455,7 +447,7 @@ header {
   font-weight: 800;
   font-size: 16px;
   transform: translateY(20px);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition);
 }
 
 .gallery-item:hover .gallery-overlay h4,
@@ -463,60 +455,36 @@ header {
   transform: translateY(0);
 }
 
-/* Testimonials */
-.testimonials {
-  background: var(--light);
-}
-
-.testimonials-grid {
+/* O Mnie */
+.about-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
-.testimonial-card {
-  background: var(--white);
-  padding: 40px;
+.about-img {
   border-radius: var(--radius);
   border: 5px solid var(--primary);
   box-shadow: var(--shadow);
 }
 
-.testimonial-header {
+/* Contact Buttons */
+.contact-buttons {
   display: flex;
-  align-items: center;
   gap: 16px;
-  margin-bottom: 24px;
+  flex-wrap: wrap;
+  margin-top: 32px;
 }
 
-.testimonial-avatar {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  border: 3px solid var(--primary);
-  object-fit: cover;
+.btn-whatsapp {
+  background: #25D366;
+  color: var(--white);
 }
 
-.testimonial-info h4 {
-  font-size: 18px;
-  margin-bottom: 4px;
-}
-
-.testimonial-info p {
-  font-size: 14px;
-  color: var(--gray);
-}
-
-.stars {
-  color: #fbbf24;
-  font-size: 18px;
-  margin-bottom: 16px;
-}
-
-.testimonial-text {
-  color: var(--gray);
-  font-style: italic;
-  line-height: 1.8;
+.btn-mail {
+  background: var(--gradient);
+  color: var(--white);
 }
 
 /* Pricing */
@@ -601,7 +569,7 @@ header {
   z-index: 999;
   animation: pulse-whatsapp 2s infinite;
   text-decoration: none;
-  transition: all 0.5s cubic-bezier(0.4, 0.2, 1);
+  transition: var(--transition);
 }
 
 @keyframes pulse-whatsapp {
@@ -658,6 +626,9 @@ footer {
   .gallery-grid {
     grid-template-columns: 1fr;
   }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
@@ -669,7 +640,9 @@ footer {
       <li><a href="#home">Start</a></li>
       <li><a href="#features">Oferta</a></li>
       <li><a href="#portfolio">Demo</a></li>
+      <li><a href="#about">O Mnie</a></li>
       <li><a href="#pricing">Cennik</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
     </ul>
   </nav>
 </header>
@@ -690,7 +663,10 @@ footer {
         </div>
         <h1>Masz firmę w <span>Radomiu?</span><br>Strona www za <span>990 zł</span> w 5 dni</h1>
         <p>Nowoczesne strony z wideo w tle, zielonymi ramkami i animacjami. Nie szablon z kreatora. Prawdziwy design który konwertuje klientów.</p>
-        <a href="#pricing" class="btn btn-primary">Zamawiam stronę PRO</a>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="#pricing" class="btn btn-primary">Zamawiam stronę PRO</a>
+          <a href="#portfolio" class="btn" style="background: var(--white); color: var(--dark); border: 4px solid var(--primary);">Zobacz Demo</a>
+        </div>
         <div class="hero-stats">
           <div class="stat-item">
             <h3>50+</h3>
@@ -703,3 +679,111 @@ footer {
           <div class="stat-item">
             <h3>98%</h3>
             <p>Zadowolonych klientów</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-badge">Co dostajesz</span>
+        <h2>To nie jest strona z kreatora</h2>
+        <p>Każdy projekt to indywidualny kod. Zielone ramki premium, wideo tło, animacje. Wygląda na 10 tysięcy, kosztuje 990 zł.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🎬</div>
+          <h3>Wideo w tle hero</h3>
+          <p>Dynamiczne tło z programowaniem. Na mobile elegancki gradient. Efekt WOW od pierwszej sekundy.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">💚</div>
+          <h3>Zielone ramki premium 5px</h3>
+          <p>Każda sekcja w grubej zielonej obramówce. Wyróżnia się na tle konkurencji. Wygląda drogo.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">⚡</div>
+          <h3>Animacje na poziomie</h3>
+          <p>Fade-in, parallax, liczniki animowane, hover glow. Strona żyje i reaguje na użytkownika.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">📱</div>
+          <h3>Mobile first design</h3>
+          <p>70% ruchu to telefon. U nas strona na mobile wygląda lepiej niż na desktopie. Gwarancja.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🚀</div>
+          <h3>Turbo szybkość 1.2s</h3>
+          <p>Optymalizacja obrazów, lazy loading, minifikacja CSS/JS. Google PageSpeed 95+.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🎯</div>
+          <h3>SEO lokalne Radom</h3>
+          <p>Optymalizacja pod "Radom + Twoja branża". Klienci znajdą Cię w Google Maps i wyszukiwarce.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-badge">Portfolio Demo</span>
+        <h2>Kliknij w zdjęcie żeby zobaczyć demo</h2>
+        <p>Każde portfolio to działająca strona. Kliknij i sprawdź jak wygląda na żywo. Zrób demo1.html do demo6.html na GitHubie.</p>
+      </div>
+      <div class="gallery-grid">
+        <a href="demo1.html" class="gallery-item fade-in" target="_blank">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Demo Agencja">
+          <div class="gallery-overlay">
+            <h4>Agencja Kreatywna</h4>
+            <span class="demo-btn">Zobacz Demo →</span>
+          </div>
+        </a>
+        <a href="demo2.html" class="gallery-item fade-in" target="_blank">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Demo Kancelaria">
+          <div class="gallery-overlay">
+            <h4>Kancelaria Prawna</h4>
+            <span class="demo-btn">Zobacz Demo →</span>
+          </div>
+        </a>
+        <a href="demo3.html" class="gallery-item fade-in" target="_blank">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80" alt="Demo Sklep">
+          <div class="gallery-overlay">
+            <h4>Sklep E-commerce</h4>
+            <span class="demo-btn">Zobacz Demo →</span>
+          </div>
+        </a>
+        <a href="demo4.html" class="gallery-item fade-in" target="_blank">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Demo Restauracja">
+          <div class="gallery-overlay">
+            <h4>Restauracja</h4>
+            <span class="demo-btn">Zobacz Demo →</span>
+          </div>
+        </a>
+        <a href="demo5.html" class="gallery-item fade-in" target="_blank">
+          <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&q=80" alt="Demo Beauty">
+          <div class="gallery-overlay">
+            <h4>Salon Beauty</h4>
+            <span class="demo-btn">Zobacz Demo →</span>
+          </div>
+        </a>
+        <a href="demo6.html" class="gallery-item fade-in" target="_blank">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80" alt="Demo Budowlanka">
+          <div class="gallery-overlay">
+            <h4>Firma Budowlana</h4>
+            <span class="demo-btn">Zobacz Demo →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-badge">O Mnie</span>
+        <h2>Cześć, jestem z Radomia</h2>
+        <p>Od 5 lat
