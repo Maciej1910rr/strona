@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strony WWW Radom - Maciej | Projekt w 5 dni od 990 zł</title>
     <meta name="description" content="Strony internetowe dla firm z Radomia. Projekt i wdrożenie w 5 dni od 990 zł. WhatsApp: 576 348 632">
-    <!-- MIEJSCE NA KOD ADSENSE -->
     <style>
         * {margin: 0; padding: 0; box-sizing: border-box;}
         :root {
@@ -62,29 +61,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
         .logo {
             font-weight: 800;
             font-size: 1.2rem;
-            text-shadow: 0 0 10px var(--neon-green);
-            text-decoration: none;
-            color: #f1f1f1;
-        }
-        .nav-menu {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-        .nav-menu a {
-            text-decoration: none;
-            font-weight: 600;
-            color: #f1f1f1;
-            transition: 0.2s;
-            cursor: pointer;
-        }
-        .nav-menu a:hover {
-            color: var(--neon-green);
             text-shadow: 0 0 10px var(--neon-green);
         }
         .header-cta {
@@ -358,68 +338,23 @@
             font-weight: bold;
             margin-right: 8px;
         }
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 35px;
+        .ads-section {
+            background: rgba(176, 38, 255, 0.05);
+            border-top: 1px solid rgba(176, 38, 255, 0.3);
+            border-bottom: 1px solid rgba(176, 38, 255, 0.3);
         }
-        .blog-card {
-            background: var(--dark-2);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 25px;
-            transition: 0.3s;
-            cursor: pointer;
+        .contact {
+            text-align: center;
         }
-        .blog-card:hover {
-            border: 1px solid var(--neon-green);
-            box-shadow: 0 0 25px rgba(37, 211, 102, 0.2);
-            transform: translateY(-5px);
-        }
-        .blog-card h3 {
-            color: var(--neon-green);
-            margin-bottom: 10px;
+        .contact-info {
             font-size: 1.3rem;
-        }
-        .blog-card p {
-            color: #aaa;
-            font-size: 0.95rem;
-        }
-        .blog-meta {
-            color: var(--neon-blue);
-            font-size: 0.85rem;
-            margin-bottom: 10px;
-        }
-        .page-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-        .page-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--neon-green);
-            text-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
-        }
-        .page-content h2 {
-            font-size: 1.8rem;
-            margin: 40px 0 15px;
-            color: var(--neon-blue);
-        }
-        .page-content p {
-            margin-bottom: 20px;
-            color: #ccc;
+            margin: 25px 0;
             line-height: 1.8;
         }
-        .page-content ul {
-            margin: 20px 0 20px 20px;
-            color: #ccc;
-        }
-        .page-content li {
-            margin-bottom: 10px;
-        }
-        .page-content a {
+        .contact-info a {
             color: var(--neon-green);
+            text-decoration: none;
+            font-weight: 700;
         }
         footer {
             text-align: center;
@@ -427,21 +362,6 @@
             color: #666;
             font-size: 0.9rem;
             border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-        .footer-links a {
-            color: #999;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .footer-links a:hover {
-            color: var(--neon-green);
         }
         .lightbox {
             display: none;
@@ -474,34 +394,27 @@
             cursor: pointer;
             font-weight: 300;
         }
-        .hidden { display: none; }
         @media (max-width: 768px) {
             .hero h1 {font-size: 2.2rem;}
             .hero p {font-size: 1.1rem;}
             .price-box.popular {transform: scale(1);}
             .section-title {font-size: 2rem;}
             .portfolio-links {flex-direction: column;}
-            .nav-menu {display: none;}
-            .header .container {justify-content: center; gap: 15px;}
         }
     </style>
 </head>
 <body>
 
+    <!-- VIDEO BG -->
     <video class="video-bg" autoplay muted loop playsinline>
         <source src="https://cdn.coverr.co/videos/coverr-coding-on-a-laptop-1584/1080p.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
 
+    <!-- HEADER -->
     <header class="header">
         <div class="container">
-            <a href="#home" class="logo">Maciej | Strony Radom</a>
-            <nav class="nav-menu">
-                <a onclick="showPage('home')">Start</a>
-                <a onclick="showPage('blog')">Blog</a>
-                <a onclick="showPage('o-mnie')">O mnie</a>
-                <a onclick="showPage('kontakt')">Kontakt</a>
-            </nav>
+            <div class="logo">Maciej | Strony Radom</div>
             <div class="header-cta">
                 <a href="tel:+48576348632">576 348 632</a>
                 <a href="https://wa.me/48576348632?text=Cześć,%20chcę%20wycenę%20strony" class="btn" style="padding: 10px 20px; font-size: 0.95rem;">WhatsApp</a>
@@ -509,84 +422,131 @@
         </div>
     </header>
 
-    <main id="app"></main>
-
-    <footer>
+    <!-- HERO -->
+    <section class="hero">
         <div class="container">
-            <div class="footer-links">
-                <a onclick="showPage('o-mnie')">O mnie</a>
-                <a onclick="showPage('blog')">Blog</a>
-                <a onclick="showPage('kontakt')">Kontakt</a>
-                <a onclick="showPage('polityka-prywatnosci')">Polityka prywatności</a>
-                <a onclick="showPage('regulamin')">Regulamin</a>
-            </div>
-            <p>&copy; 2026 Maciej Strony WWW Radom. Wszystkie prawa zastrzeżone.</p>
+            <h1>Strony WWW dla firm z Radomia<br>które dowożą klientów z Google</h1>
+            <p>Projekt + wdrożenie w 5 dni. Bez IT-bełkotu. Prosto, na temat, od 990 zł netto.</p>
+            <a href="https://wa.me/48576348632?text=Cześć,%20chcę%20darmową%20wycenę%20strony" class="btn">CHCĘ DARMOWĄ WYCENĘ NA WHATSAPP</a>
+            <a href="#realizacje" class="btn btn-secondary">Zobacz realizacje</a>
         </div>
-    </footer>
+    </section>
 
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightbox-img" src="" alt="">
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+        <div class="container">
+            <b>Gwarancja:</b> Płacisz 50% po akceptacji projektu. Nie spodoba Ci się = nie płacisz nic.
+        </div>
     </div>
 
-    <script>
-        const pages = {
-            'home': `
-            <section class="hero">
-                <div class="container">
-                    <h1>Strony WWW dla firm z Radomia<br>które dowożą klientów z Google</h1>
-                    <p>Projekt + wdrożenie w 5 dni. Bez IT-bełkotu. Prosto, na temat, od 990 zł netto.</p>
-                    <a href="https://wa.me/48576348632?text=Cześć,%20chcę%20darmową%20wycenę%20strony" class="btn">CHCĘ DARMOWĄ WYCENĘ NA WHATSAPP</a>
-                    <a href="#realizacje" class="btn btn-secondary">Zobacz realizacje</a>
+    <!-- DLACZEGO JA -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Dlaczego ja, a nie agencja za 8 tysięcy?</h2>
+            <div class="features">
+                <div class="feature-box">
+                    <div class="feature-icon">💬</div>
+                    <h3>Gadamy po ludzku</h3>
+                    <p>Bez IT-bełkotu. Wiesz co dostajesz i za co płacisz. Zero ściemy.</p>
                 </div>
-            </section>
-            <div class="trust-bar">
-                <div class="container">
-                    <b>Gwarancja:</b> Płacisz 50% po akceptacji projektu. Nie spodoba Ci się = nie płacisz nic.
+                <div class="feature-box">
+                    <div class="feature-icon">📍</div>
+                    <h3>Jestem z Radomia</h3>
+                    <p>Wiesz do kogo dzwonisz. Nie znikam po kasie. Spotkamy się na mieście jak trzeba.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Robię w 5 dni</h3>
+                    <p>Nie czekasz 2 miesiące na stronę. W poniedziałek gadamy, w piątek masz stronę online.</p>
                 </div>
             </div>
-            <section class="section">
-                <div class="container">
-                    <h2 class="section-title">Dlaczego ja, a nie agencja za 8 tysięcy?</h2>
-                    <div class="features">
-                        <div class="feature-box">
-                            <div class="feature-icon">💬</div>
-                            <h3>Gadamy po ludzku</h3>
-                            <p>Bez IT-bełkotu. Wiesz co dostajesz i za co płacisz. Zero ściemy.</p>
-                        </div>
-                        <div class="feature-box">
-                            <div class="feature-icon">📍</div>
-                            <h3>Jestem z Radomia</h3>
-                            <p>Wiesz do kogo dzwonisz. Nie znikam po kasie. Spotkamy się na mieście jak trzeba.</p>
-                        </div>
-                        <div class="feature-box">
-                            <div class="feature-icon">⚡</div>
-                            <h3>Robię w 5 dni</h3>
-                            <p>Nie czekasz 2 miesiące na stronę. W poniedziałek gadamy, w piątek masz stronę online.</p>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section" id="realizacje">
+        <div class="container">
+            <h2 class="section-title">Kliknij i zobacz dema ↓</h2>
+            <p class="section-subtitle">Każda strona jest robiona pod konkretną firmę. Ma sprzedawać, nie tylko wyglądać.</p>
+            <div class="portfolio">
+                <div class="portfolio-item">
+                    <div class="portfolio-img-wrap" onclick="openLightbox('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074')">
+                        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074" alt="Strona dla barbera">
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">Barber Shop</span>
+                        <h3>Demo: Barber Radom</h3>
+                        <p><b>Problem:</b> Klienci dzwonili non stop o wolne terminy.<br><br>
+                        <b>Rozwiązanie:</b> System rezerwacji online Booksy.<br><br>
+                        <b>Wynik:</b> 60% mniej telefonów.</p>
+                        <div class="portfolio-links">
+                            <a href="demo-fryzjer.html" target="_blank" class="link-demo">Zobacz Demo</a>
+                            <a href="https://wa.me/48576348632?text=Chcę%20stronę%20jak%20dla%20barbera" class="link-wa">Chcę taką</a>
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="section" id="realizacje">
-                <div class="container">
-                    <h2 class="section-title">Kliknij i zobacz dema ↓</h2>
-                    <p class="section-subtitle">Każda strona jest robiona pod konkretną firmę. Ma sprzedawać, nie tylko wyglądać.</p>
-                    <div class="portfolio">
-                        <div class="portfolio-item">
-                            <div class="portfolio-img-wrap" onclick="openLightbox('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074')">
-                                <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074" alt="Strona dla barbera">
-                            </div>
-                            <div class="portfolio-content">
-                                <span class="portfolio-tag">Barber Shop</span>
-                                <h3>Demo: Barber Radom</h3>
-                                <p><b>Problem:</b> Klienci dzwonili non stop o wolne terminy.<br><br>
-                                <b>Rozwiązanie:</b> System rezerwacji online Booksy.<br><br>
-                                <b>Wynik:</b> 60% mniej telefonów.</p>
-                                <div class="portfolio-links">
-                                    <a href="demo-fryzjer.html" target="_blank" class="link-demo">Zobacz Demo</a>
-                                    <a href="https://wa.me/48576348632?text=Chcę%20stronę%20jak%20dla%20barbera" class="link-wa">Chcę taką</a>
-                                </div>
-                            </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img-wrap" onclick="openLightbox('https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?q=80&w=2069')">
+                        <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?q=80&w=2069" alt="Strona dla kosmetyczki">
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">Beauty</span>
+                        <h3>Demo: Salon Kosmetyczny</h3>
+                        <p><b>Problem:</b> Klientki nie wiedziały jaki jest cennik i wolne terminy.<br><br>
+                        <b>Rozwiązanie:</b> Cennik online + kalendarz zabiegów.<br><br>
+                        <b>Wynik:</b> +40% rezerwacji.</p>
+                        <div class="portfolio-links">
+                            <a href="demo-kosmetyczka.html" target="_blank" class="link-demo">Zobacz Demo</a>
+                            <a href="https://wa.me/48576348632?text=Chcę%20stronę%20jak%20dla%20kosmetyczki" class="link-wa">Chcę taką</a>
                         </div>
-                        <div class="portfolio-item">
-                            <div class="portfolio-img-wrap" onclick="openLightbox('https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?q=80&w=2069')">
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img-wrap" onclick="openLightbox('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=2074')">
+                        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=2074" alt="Strona dla mechanika">
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">Usługi</span>
+                        <h3>Demo: Auto Mechanik</h3>
+                        <p><b>Problem:</b> Niewidoczny w Google. Zero zapytań z internetu.<br><br>
+                        <b>Rozwiązanie:</b> Prosta strona + optymalizacja wizytówki Google.<br><br>
+                        <b>Wynik:</b> 8 zapytań w 1. tydzień.</p>
+                        <div class="portfolio-links">
+                            <a href="demo-mechanik.html" target="_blank" class="link-demo">Zobacz Demo</a>
+                            <a href="https://wa.me/48576348632?text=Chcę%20stronę%20jak%20dla%20mechanika" class="link-wa">Chcę taką</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="https://wa.me/48576348632?text=Chcę%20taką%20stronę%20za%20990zł" class="btn">CHCĘ TAKĄ STRONĘ ZA 990 ZŁ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CENNIK -->
+    <section class="section pricing">
+        <div class="container">
+            <h2 class="section-title">Ile to kosztuje? Prosto i bez gwiazdek</h2>
+            <p class="section-subtitle">Wybierz pakiet i działamy. Ceny netto.</p>
+            <div class="pricing-grid">
+                <div class="price-box">
+                    <h3>PAKIET START</h3>
+                    <div class="price">990 zł</div>
+                    <ul>
+                        <li>Strona wizytówka do 3 podstron</li>
+                        <li>Działa idealnie na telefonie</li>
+                        <li>Formularz kontaktowy na maila</li>
+                        <li>Wdrożenie w 5 dni roboczych</li>
+                        <li>Domena + hosting na rok 250 zł</li>
+                    </ul>
+                    <a href="https://wa.me/48576348632?text=Wybieram%20PAKIET%20START" class="btn btn-secondary">Wybieram START</a>
+                </div>
+                <div class="price-box popular">
+                    <div class="popular-badge">NAJCZĘŚCIEJ WYBIERANY</div>
+                    <h3>PAKIET FIRMA</h3>
+                    <div class="price">1790 zł</div>
+                    <ul>
+                        <li><b>Wszystko ze START +</b></li>
+                        <li>Rozbudowa do 6 podstron</li>
+                        <li>Podpięcie Google Maps
