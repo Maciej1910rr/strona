@@ -3,33 +3,97 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dzięki - BackhaulPL</title>
+<title>Zgłoszenie wysłane - BackhaulPL</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>body { font-family: 'Outfit', sans-serif; }</style>
+<style>
+    body { font-family: 'Outfit', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #0066FF 0%, #0052CC 50%, #FF6B00 100%); background-size: 200% 200%; animation: gradientShift 8s ease infinite; }
+    @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+    .bounce-animation { animation: bounce 2s ease-in-out infinite; }
+</style>
 </head>
 <body class="bg-slate-50 text-slate-900">
-    <div class="min-h-screen flex items-center justify-center px-4">
-        <div class="text-center max-w-2xl">
-            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-            </div>
-            <h1 class="text-4xl sm:text-5xl font-black mb-4">Zgłoszenie wysłane!</h1>
-            <p class="text-xl text-slate-600 mb-8">
-                Dostałem Twoje dane. <strong>Oddzwonię w ciągu 5 minut</strong> z pasującym ładunkiem.
-            </p>
-            <p class="text-lg text-slate-600 mb-8">
-                Trzymaj telefon przy sobie 📱
-            </p>
-            <a href="/strona/" class="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-lg transition-all">
-                Wróć na stronę główną
-            </a>
-            <div class="mt-12 text-sm text-slate-500">
-                <p>Nie dostałeś telefonu w 5 min? Pisz na WhatsApp: <strong>+48 XXX XXX XXX</strong></p>
+    <!-- Nav -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <a href="/strona/" class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center">
+                        <i data-lucide="truck" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <span class="text-xl sm:text-2xl font-black">Backhaul<span class="text-blue-600">PL</span></span>
+                </a>
+                <a href="https://wa.me/48576348632?text=Cześć,%20wysłałem%20zgłoszenie%20na%20BackhaulPL" target="_blank" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 text-white rounded-full font-bold text-sm sm:text-base hover:bg-green-700 transition">
+                    WhatsApp
+                </a>
             </div>
         </div>
-    </div>
+    </nav>
+
+    <!-- Hero Dzieki -->
+    <section class="min-h-screen flex items-center justify-center px-4 pt-24 pb-16">
+        <div class="text-center max-w-3xl mx-auto">
+            <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8 bounce-animation">
+                <i data-lucide="check-circle-2" class="w-14 h-14 text-green-600"></i>
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl font-black mb-6 leading-tight">
+                Zgłoszenie<br/>
+                <span class="bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent">wysłane!</span>
+            </h1>
+            
+            <p class="text-xl sm:text-2xl text-slate-600 mb-8 font-semibold">
+                Dostałem Twoje dane. <span class="text-blue-600">Oddzwonię w ciągu 5 minut</span> z pasującym ładunkiem.
+            </p>
+
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-slate-200 mb-8">
+                <h2 class="text-xl font-bold mb-4">Co dalej?</h2>
+                <div class="space-y-4 text-left">
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="text-white font-black">1</span>
+                        </div>
+                        <p class="text-slate-700"><strong>Trzymaj telefon przy sobie.</strong> Dzwonię z numeru +48 576 348 632.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="text-white font-black">2</span>
+                        </div>
+                        <p class="text-slate-700"><strong>Mówię Ci stawkę i trasę.</strong> Pasuje? Dogadujemy szczegóły i kontakt do firmy.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="text-white font-black">3</span>
+                        </div>
+                        <p class="text-slate-700"><strong>Zarabiasz zamiast wracać na pusto.</strong> Prowizja 5% dopiero po robocie.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="/strona/" class="px-8 py-4 bg-slate-900 hover:bg-slate-800 text-white rounded-2xl font-bold text-lg transition-all shadow-lg hover:scale-105">
+                    Wróć na stronę główną
+                </a>
+                <a href="https://wa.me/48576348632" target="_blank" class="px-8 py-4 bg-green-600 hover:bg-green-700 text-white rounded-2xl font-bold text-lg transition-all shadow-lg hover:scale-105">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Napisz na WhatsApp
+                    </div>
+                </a>
+            </div>
+
+            <div class="mt-12 text-sm text-slate-500">
+                <p>Nie dostałeś telefonu w 5 min? Dzwoń śmiało: <strong class="text-slate-700">+48 576 348 632</strong></p>
+                <p class="mt-2">Lub napisz: <a href="mailto:maciej1910rr@proton.me" class="text-blue-600 font-semibold hover:underline">maciej1910rr@proton.me</a></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
